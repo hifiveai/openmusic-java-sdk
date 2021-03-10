@@ -6,7 +6,7 @@
     <groupId>com.hifiveai</groupId>
     <artifactId>hifive-openapi</artifactId>
     <name>hifive-openapi</name>
-    <version>4.0.1.1-RELEASE</version>
+    <version>4.0.1_1-RELEASE</version>
     <description>Starter of log recorder.</description>
     <packaging>jar</packaging>
     <url>https://github.com/hifiveai/hifive-openapi-sdk</url>
