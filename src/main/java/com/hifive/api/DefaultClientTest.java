@@ -9,12 +9,27 @@ public class DefaultClientTest {
 
 
     public static void main(String[] args) throws InterruptedException {
-        String url = "https://hifive-gateway-demo.hifiveai.com";
-        String appkey = "d82d1baa7b854a619081d17be3cfb744";
-        String secret = "55947003c67e45bdae34aed6655a6113";
+//        String url = "https://hifive-gateway-demo.hifiveai.com";
+//        String appkey = "d82d1baa7b854a619081d17be3cfb744";
+//        String secret = "55947003c67e45bdae34aed6655a6113";
+
+        String url = "https://hifive-gateway-test.hifiveai.com";
+        String appkey = "25861e5063284e38a40bc960070b34ab";
+        String secret = "7a4e2914d1b647b98a";
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
         HFTrailListen(client);
+        HFTrafficTrialTest(client);
+        HFUGCTrialTest(client);
+        HFKTrialTest(client);
+        HFOrderTrialTest(client);
+
+        hifiveUGCListenRequestTest(client);
+        hifiveKListenRequestTest(client);
+
+        hifiveTrafficReportListenRequestTest(client);
+        hifiveUGCReportListenRequestTest(client);
+        hifiveKReportListenRequestTest(client);
 /*        for (int i = 0;i<10; i++) {
 
             //  long time = System.currentTimeMillis();
@@ -83,7 +98,11 @@ public class DefaultClientTest {
         hifiveChannelRequestTest(client);
         hifiveChannelSheetRequestTest(client);
         hifiveHQListenSliceRequestTest(client);
+
         hifiveHQListenRequestTest(client);
+        hifiveUGCListenRequestTest(client);
+        hifiveKListenRequestTest(client);
+
         hifiveOrderMusicRequestTest(client);
         hifiveOrderPublishRequestTest(client);
 
@@ -116,8 +135,8 @@ public class DefaultClientTest {
         hifiveTrafficSearchMusicRequestTest(client);
         hifiveTrafficTagMusicRequestTest(client);
         hifiveOrderTagMusicRequestTest(client);
-        hifiveTrafficDownloadRequestTest(client);*/
-
+        hifiveTrafficDownloadRequestTest(client);
+        */
     }
 
     private static void HifiveBaseLoginRequest(HFClient client) {
@@ -358,6 +377,87 @@ public class DefaultClientTest {
         }
     }
 
+    private static void hifiveUGCListenRequestTest(HFClient client) {
+        HFUgcListenRequest request = new HFUgcListenRequest();
+        request.setMethod(HFRequest.METHOD_GET);
+        request.setClientId("InstaOpen202012010000360001");
+        request.setMusicId("CFE6475822DF");
+        /*request.setAudioFormat(AudioFormatEnum.MP3_128.format);
+        request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
+        try {
+            HFUgcListenResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void hifiveKListenRequestTest(HFClient client) {
+        HFKListenRequest request = new HFKListenRequest();
+        request.setMethod(HFRequest.METHOD_GET);
+        request.setClientId("InstaOpen202012010000360001");
+        request.setMusicId("CFE6475822DF");
+        /*request.setAudioFormat(AudioFormatEnum.MP3_128.format);
+        request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
+        try {
+            HFKListenResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void hifiveTrafficReportListenRequestTest(HFClient client) {
+        HFTrafficReportListenRequest request = new HFTrafficReportListenRequest();
+        request.setMethod(HFRequest.METHOD_GET);
+        request.setClientId("InstaOpen202012010000360001");
+        request.setMusicId("125F34CDDDF6");
+        request.setTimestamp(System.currentTimeMillis());
+        request.setDuration(10L);
+        request.setAudioFormat(AudioFormatEnum.MP3_128.format);
+        request.setAudioRate(AudioFormatEnum.MP3_128.rate);
+        try {
+            HFTrafficReportListenResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void hifiveUGCReportListenRequestTest(HFClient client) {
+        HFUgcReportListenRequest request = new HFUgcReportListenRequest();
+        request.setMethod(HFRequest.METHOD_GET);
+        request.setClientId("InstaOpen202012010000360001");
+        request.setMusicId("125F34CDDDF6");
+        request.setTimestamp(System.currentTimeMillis());
+        request.setDuration(10L);
+        request.setAudioFormat(AudioFormatEnum.MP3_128.format);
+        request.setAudioRate(AudioFormatEnum.MP3_128.rate);
+        try {
+            HFUgcReportListenResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void hifiveKReportListenRequestTest(HFClient client) {
+        HFKReportListenRequest request = new HFKReportListenRequest();
+        request.setMethod(HFRequest.METHOD_GET);
+        request.setClientId("InstaOpen202012010000360001");
+        request.setMusicId("125F34CDDDF6");
+        request.setTimestamp(System.currentTimeMillis());
+        request.setDuration(10L);
+        request.setAudioFormat(AudioFormatEnum.MP3_128.format);
+        request.setAudioRate(AudioFormatEnum.MP3_128.rate);
+        try {
+            HFKReportListenResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
     private static void HFTrailListen(HFClient client) {
         HFTrialRequest request = new HFTrialRequest();
         request.setMethod(HFRequest.METHOD_GET);
@@ -365,6 +465,61 @@ public class DefaultClientTest {
         request.setMusicId("7867AEFA");
         try {
             HFTrialResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private static void HFTrafficTrialTest(HFClient client) {
+        HFTrafficTrialRequest request = new HFTrafficTrialRequest();
+        request.setMethod(HFRequest.METHOD_GET);
+        request.setClientId("HOomxI+g0HvxGKofmUVsnw==");
+        request.setMusicId("CFE6475822DF");
+        try {
+            HFTrafficTrialResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private static void HFUGCTrialTest(HFClient client) {
+        HFUgcTrialRequest request = new HFUgcTrialRequest();
+        request.setMethod(HFRequest.METHOD_GET);
+        request.setClientId("HOomxI+g0HvxGKofmUVsnw==");
+        request.setMusicId("CFE6475822DF");
+        try {
+            HFUgcTrialResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void HFKTrialTest(HFClient client) {
+        HFKTrialRequest request = new HFKTrialRequest();
+        request.setMethod(HFRequest.METHOD_GET);
+        request.setClientId("HOomxI+g0HvxGKofmUVsnw==");
+        request.setMusicId("CFE6475822DF");
+        try {
+            HFKTrialResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private static void HFOrderTrialTest(HFClient client) {
+        HFOrderTrialRequest request = new HFOrderTrialRequest();
+        request.setMethod(HFRequest.METHOD_GET);
+        request.setClientId("HOomxI+g0HvxGKofmUVsnw==");
+        request.setMusicId("CFE6475822DF");
+        try {
+            HFOrderTrialResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
