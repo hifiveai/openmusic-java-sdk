@@ -2,10 +2,10 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HFTrailResponse;
+import com.hifive.api.response.HFTrialResponse;
 import java.util.Map;
 
-public class HFTrailRequest extends HFBaseRequest<HFTrailResponse> {
+public class HFTrialRequest extends HFBaseRequest<HFTrialResponse> {
 
 
     /**
@@ -67,8 +67,8 @@ public class HFTrailRequest extends HFBaseRequest<HFTrailResponse> {
     }
 
 
-    public Class<HFTrailResponse> getResponseClass() {
-        return HFTrailResponse.class;
+    public Class<HFTrialResponse> getResponseClass() {
+        return HFTrialResponse.class;
     }
 
     @Override

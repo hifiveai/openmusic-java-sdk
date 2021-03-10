@@ -359,12 +359,12 @@ public class DefaultClientTest {
     }
 
     private static void HFTrailListen(HFClient client) {
-        HFTrailRequest request = new HFTrailRequest();
+        HFTrialRequest request = new HFTrialRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("HOomxI+g0HvxGKofmUVsnw==");
         request.setMusicId("7867AEFA");
         try {
-            HFTrailResponse response = client.execute(request);
+            HFTrialResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
