@@ -14,7 +14,7 @@ public class DefaultClientTest {
         String secret = "55947003c67e45bdae34aed6655a6113";
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
-        hifiveSearchMusicRequestTest(client);
+        HFTrailListen(client);
 /*        for (int i = 0;i<10; i++) {
 
             //  long time = System.currentTimeMillis();
@@ -358,13 +358,13 @@ public class DefaultClientTest {
         }
     }
 
-    private static void hifiveHQTrailListen(HFClient client) {
-        HFTrailHQListenRequest request = new HFTrailHQListenRequest();
+    private static void HFTrailListen(HFClient client) {
+        HFTrailRequest request = new HFTrailRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("HOomxI+g0HvxGKofmUVsnw==");
         request.setMusicId("7867AEFA");
         try {
-            HFTrailHQListenResponse response = client.execute(request);
+            HFTrailResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
