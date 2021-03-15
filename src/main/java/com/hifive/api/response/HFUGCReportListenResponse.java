@@ -2,7 +2,7 @@ package com.hifive.api.response;
 
 import com.hifive.api.HFResponse;
 
-public class HFUgcReportListenResponse extends HFResponse {
+public class HFUGCReportListenResponse extends HFResponse {
 
 
 }

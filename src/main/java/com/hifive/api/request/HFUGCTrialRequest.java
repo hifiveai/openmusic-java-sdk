@@ -2,11 +2,11 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HFUgcListenResponse;
+import com.hifive.api.response.HFUGCTrialResponse;
 
 import java.util.Map;
 
-public class HFUgcListenRequest extends HFBaseRequest<HFUgcListenResponse> {
+public class HFUGCTrialRequest extends HFBaseRequest<HFUGCTrialResponse> {
 
 
     /**
@@ -26,7 +26,7 @@ public class HFUgcListenRequest extends HFBaseRequest<HFUgcListenResponse> {
 
     @Override
     public String getApiMethodName() {
-        return "UGCListen";
+        return "UGCTrial";
     }
 
 
@@ -55,7 +55,6 @@ public class HFUgcListenRequest extends HFBaseRequest<HFUgcListenResponse> {
         this.audioRate = audioRate;
     }
 
-
     @Override
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
@@ -69,8 +68,8 @@ public class HFUgcListenRequest extends HFBaseRequest<HFUgcListenResponse> {
     }
 
     @Override
-    public Class<HFUgcListenResponse> getResponseClass() {
-        return HFUgcListenResponse.class;
+    public Class<HFUGCTrialResponse> getResponseClass() {
+        return HFUGCTrialResponse.class;
     }
 
     @Override

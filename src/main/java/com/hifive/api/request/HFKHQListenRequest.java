@@ -2,11 +2,11 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HFKListenResponse;
+import com.hifive.api.response.HFKHQListenResponse;
 
 import java.util.Map;
 
-public class HFKListenRequest extends HFBaseRequest<HFKListenResponse> {
+public class HFKHQListenRequest extends HFBaseRequest<HFKHQListenResponse> {
 
 
     /**
@@ -26,7 +26,7 @@ public class HFKListenRequest extends HFBaseRequest<HFKListenResponse> {
 
     @Override
     public String getApiMethodName() {
-        return "KListen";
+        return "KHQListen";
     }
 
 
@@ -69,8 +69,8 @@ public class HFKListenRequest extends HFBaseRequest<HFKListenResponse> {
     }
 
     @Override
-    public Class<HFKListenResponse> getResponseClass() {
-        return HFKListenResponse.class;
+    public Class<HFKHQListenResponse> getResponseClass() {
+        return HFKHQListenResponse.class;
     }
 
     @Override

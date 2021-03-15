@@ -18,18 +18,18 @@ public class DefaultClientTest {
         String secret = "7a4e2914d1b647b98a";
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
-        HFTrailListen(client);
-        HFTrafficTrialTest(client);
-        HFUGCTrialTest(client);
-        HFKTrialTest(client);
-        HFOrderTrialTest(client);
-
-        hifiveUGCListenRequestTest(client);
-        hifiveKListenRequestTest(client);
-
-        hifiveTrafficReportListenRequestTest(client);
-        hifiveUGCReportListenRequestTest(client);
-        hifiveKReportListenRequestTest(client);
+//        HFTrailListen(client);
+//        HFTrafficTrialTest(client);
+//        HFUGCTrialTest(client);
+//        HFKTrialTest(client);
+//        HFOrderTrialTest(client);
+//
+//        hifiveUGCListenRequestTest(client);
+//        hifiveKListenRequestTest(client);
+//
+//        hifiveTrafficReportListenRequestTest(client);
+//        hifiveUGCReportListenRequestTest(client);
+//        hifiveKReportListenRequestTest(client);
 /*        for (int i = 0;i<10; i++) {
 
             //  long time = System.currentTimeMillis();
@@ -378,14 +378,14 @@ public class DefaultClientTest {
     }
 
     private static void hifiveUGCListenRequestTest(HFClient client) {
-        HFUgcListenRequest request = new HFUgcListenRequest();
+        HFUGCHQListenRequest request = new HFUGCHQListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("InstaOpen202012010000360001");
         request.setMusicId("CFE6475822DF");
         /*request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
         try {
-            HFUgcListenResponse response = client.execute(request);
+            HFUGCHQListenResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -393,14 +393,14 @@ public class DefaultClientTest {
     }
 
     private static void hifiveKListenRequestTest(HFClient client) {
-        HFKListenRequest request = new HFKListenRequest();
+        HFKHQListenRequest request = new HFKHQListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("InstaOpen202012010000360001");
         request.setMusicId("CFE6475822DF");
         /*request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
         try {
-            HFKListenResponse response = client.execute(request);
+            HFKHQListenResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -425,7 +425,7 @@ public class DefaultClientTest {
     }
 
     private static void hifiveUGCReportListenRequestTest(HFClient client) {
-        HFUgcReportListenRequest request = new HFUgcReportListenRequest();
+        HFUGCReportListenRequest request = new HFUGCReportListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("InstaOpen202012010000360001");
         request.setMusicId("125F34CDDDF6");
@@ -434,7 +434,7 @@ public class DefaultClientTest {
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);
         try {
-            HFUgcReportListenResponse response = client.execute(request);
+            HFUGCReportListenResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -487,12 +487,12 @@ public class DefaultClientTest {
 
 
     private static void HFUGCTrialTest(HFClient client) {
-        HFUgcTrialRequest request = new HFUgcTrialRequest();
+        HFUGCTrialRequest request = new HFUGCTrialRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("HOomxI+g0HvxGKofmUVsnw==");
         request.setMusicId("CFE6475822DF");
         try {
-            HFUgcTrialResponse response = client.execute(request);
+            HFUGCTrialResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
