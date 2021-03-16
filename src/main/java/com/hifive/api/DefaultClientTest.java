@@ -9,10 +9,6 @@ public class DefaultClientTest {
 
 
     public static void main(String[] args) throws InterruptedException {
-//        String url = "https://hifive-gateway-demo.hifiveai.com";
-//        String appkey = "d82d1baa7b854a619081d17be3cfb744";
-//        String secret = "55947003c67e45bdae34aed6655a6113";
-
         String url = "https://hifive-gateway-test.hifiveai.com";
         String appkey = "25861e5063284e38a40bc960070b34ab";
         String secret = "7a4e2914d1b647b98a";
@@ -27,9 +23,9 @@ public class DefaultClientTest {
 //        hifiveUGCListenRequestTest(client);
 //        hifiveKListenRequestTest(client);
 //
-//        hifiveTrafficReportListenRequestTest(client);
-//        hifiveUGCReportListenRequestTest(client);
-//        hifiveKReportListenRequestTest(client);
+        hifiveTrafficReportListenRequestTest(client);
+        hifiveUGCReportListenRequestTest(client);
+        hifiveKReportListenRequestTest(client);
 /*        for (int i = 0;i<10; i++) {
 
             //  long time = System.currentTimeMillis();
@@ -409,7 +405,7 @@ public class DefaultClientTest {
 
     private static void hifiveTrafficReportListenRequestTest(HFClient client) {
         HFTrafficReportListenRequest request = new HFTrafficReportListenRequest();
-        request.setMethod(HFRequest.METHOD_GET);
+        request.setMethod(HFRequest.METHOD_POST);
         request.setClientId("InstaOpen202012010000360001");
         request.setMusicId("125F34CDDDF6");
         request.setTimestamp(System.currentTimeMillis());
@@ -426,7 +422,7 @@ public class DefaultClientTest {
 
     private static void hifiveUGCReportListenRequestTest(HFClient client) {
         HFUGCReportListenRequest request = new HFUGCReportListenRequest();
-        request.setMethod(HFRequest.METHOD_GET);
+        request.setMethod(HFRequest.METHOD_POST);
         request.setClientId("InstaOpen202012010000360001");
         request.setMusicId("125F34CDDDF6");
         request.setTimestamp(System.currentTimeMillis());
@@ -443,7 +439,7 @@ public class DefaultClientTest {
 
     private static void hifiveKReportListenRequestTest(HFClient client) {
         HFKReportListenRequest request = new HFKReportListenRequest();
-        request.setMethod(HFRequest.METHOD_GET);
+        request.setMethod(HFRequest.METHOD_POST);
         request.setClientId("InstaOpen202012010000360001");
         request.setMusicId("125F34CDDDF6");
         request.setTimestamp(System.currentTimeMillis());
