@@ -9,12 +9,12 @@ public class DefaultClientTest {
 
 
     public static void main(String[] args) throws InterruptedException {
-        String url = "https://hifive-gateway-demo.hifiveai.com";
-        String appkey = "d82d1baa7b854a619081d17be3cfb744";
-        String secret = "55947003c67e45bdae34aed6655a6113";
+        String url = "https://hifive-gateway-dev.hifiveai.com";
+        String appkey = "5216d02806d5464b943492838b7e4390";
+        String secret = "2d241e8f934d47d5";
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
-        HFTrailListen(client);
+        HifiveBaseLoginRequest(client);
 /*        for (int i = 0;i<10; i++) {
 
             //  long time = System.currentTimeMillis();

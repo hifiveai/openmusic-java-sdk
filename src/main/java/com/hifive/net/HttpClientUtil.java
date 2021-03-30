@@ -134,11 +134,11 @@ public class HttpClientUtil {
     }*/
 
     public static String doPost(String url, Map<String, Object> param, Map<String, String> header, HttpHost proxy) throws HttpException {
-        return doPost(url, 1, param, header, proxy, null);
+        return doPost(url, 1, param, header, proxy, Charset.forName("utf-8"));
     }
 
     public static String doPost(String url, Map<String, Object> param, Map<String, String> header) throws HttpException {
-        return doPost(url, 1, param, header, null, null);
+        return doPost(url, 1, param, header, null, Charset.forName("utf-8"));
     }
 
     public static String doPost(String url, int maxReTryCount, Map<String, Object> param, Map<String, String> header, HttpHost proxy, Charset responseCharset) throws HttpException {
@@ -162,7 +162,7 @@ public class HttpClientUtil {
             post.setEntity(getMultipartEntity(param));
         } else {
             try {
-                post.setEntity(getUrlEncodedFormEntity(param));
+                post.setEntity(getUrlEncodedFormEntity(param,responseCharset));
             } catch (UnsupportedEncodingException e) {
 
             }
@@ -295,7 +295,7 @@ public class HttpClientUtil {
         return result;
     }
 
-    private static HttpEntity getUrlEncodedFormEntity(Map<String, Object> params) throws UnsupportedEncodingException {
+    private static HttpEntity getUrlEncodedFormEntity(Map<String, Object> params, Charset responseCharset) throws UnsupportedEncodingException {
         ArrayList<NameValuePair> nameValuePairs = new ArrayList<>();
         if (null != params) {
             Iterator<Map.Entry<String, Object>> it = params.entrySet().iterator();
@@ -308,7 +308,7 @@ public class HttpClientUtil {
                 }
             }
         }
-        return new UrlEncodedFormEntity(nameValuePairs);
+        return new UrlEncodedFormEntity(nameValuePairs,responseCharset);
     }
 
     private static HttpEntity getMultipartEntity(Map<String, Object> param) throws HttpException {
