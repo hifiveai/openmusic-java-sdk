@@ -259,6 +259,8 @@ public class DefaultClientTest {
         request.setPage(1);
         request.setPageSize(10);
         request.setTagIds("696,703");
+        request.setSearchFiled(SearchFiledEnum.MUSIC.getValue());
+        request.setSearchSmart(SearchSmartEnum.NO.getValue());
         request.setNonce("fee23fwy9cef16fsw6387wg7m61uw676");
         request.setClientId("jisuapi55667788");
         try {

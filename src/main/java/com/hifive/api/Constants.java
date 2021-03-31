@@ -116,5 +116,5 @@ public abstract class Constants {
     /**
      * 签名类型
      **/
-    public static final String VERSION = "V4.0.1";
+    public static final String VERSION = "V4.1.1";
 }

@@ -46,6 +46,16 @@ public class HFSearchMusicRequest extends HFPageRequest<HFSearchMusicResponse> {
      */
     private Integer durationFrom;
 
+    /**
+     * 搜索字段
+     */
+    private String searchFiled;
+
+    /**
+     * 智能分词
+     */
+    private Integer searchSmart;
+
     @Override
     public String getApiMethodName() {
         return "SearchMusic";
@@ -135,6 +145,22 @@ public class HFSearchMusicRequest extends HFPageRequest<HFSearchMusicResponse> {
         this.durationFrom = durationFrom;
     }
 
+    public String getSearchFiled() {
+        return searchFiled;
+    }
+
+    public void setSearchFiled(String searchFiled) {
+        this.searchFiled = searchFiled;
+    }
+
+    public Integer getSearchSmart() {
+        return searchSmart;
+    }
+
+    public void setSearchSmart(Integer searchSmart) {
+        this.searchSmart = searchSmart;
+    }
+
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
@@ -147,6 +173,8 @@ public class HFSearchMusicRequest extends HFPageRequest<HFSearchMusicResponse> {
                 put("bpmTo", getBpmTo());
                 put("durationFrom", getDurationFrom());
                 put("durationTo", getDurationTo());
+                put("searchFiled", getSearchFiled());
+                put("searchSmart", getSearchSmart());
                 put("Page", getPage());
                 put("PageSize", getPageSize());
             }
