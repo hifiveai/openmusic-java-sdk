@@ -9,19 +9,19 @@ public class DefaultClientTest {
 
 
     public static void main(String[] args) throws InterruptedException {
-<<<<<<< HEAD
+
         String url = "https://hifive-gateway-dev.hifiveai.com";
         String appkey = "5216d02806d5464b943492838b7e4390";
         String secret = "2d241e8f934d47d5";
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
         HifiveBaseLoginRequest(client);
-=======
-        String url = "https://hifive-gateway-test.hifiveai.com";
-        String appkey = "25861e5063284e38a40bc960070b34ab";
-        String secret = "7a4e2914d1b647b98a";
-        System.out.println("------------------------------------hifiveHQListenRequestTest");
-        HFClient client = new DefaultHFClient(url, appkey, secret);
+
+//        String url = "https://hifive-gateway-test.hifiveai.com";
+//        String appkey = "25861e5063284e38a40bc960070b34ab";
+//        String secret = "7a4e2914d1b647b98a";
+//        System.out.println("------------------------------------hifiveHQListenRequestTest");
+//        HFClient client = new DefaultHFClient(url, appkey, secret);
 //        HFTrailListen(client);
 //        HFTrafficTrialTest(client);
 //        HFUGCTrialTest(client);
@@ -34,7 +34,6 @@ public class DefaultClientTest {
         hifiveTrafficReportListenRequestTest(client);
         hifiveUGCReportListenRequestTest(client);
         hifiveKReportListenRequestTest(client);
->>>>>>> cfaf45f61a04efecc29cebfc886502bd3bb7920f
 /*        for (int i = 0;i<10; i++) {
 
             //  long time = System.currentTimeMillis();
