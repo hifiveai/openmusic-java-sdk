@@ -10,18 +10,18 @@ public class DefaultClientTest {
 
     public static void main(String[] args) throws InterruptedException {
 
-        String url = "https://hifive-gateway-dev.hifiveai.com";
-        String appkey = "5216d02806d5464b943492838b7e4390";
-        String secret = "2d241e8f934d47d5";
-        System.out.println("------------------------------------hifiveHQListenRequestTest");
-        HFClient client = new DefaultHFClient(url, appkey, secret);
-        HifiveBaseLoginRequest(client);
-
-//        String url = "https://hifive-gateway-test.hifiveai.com";
-//        String appkey = "25861e5063284e38a40bc960070b34ab";
-//        String secret = "7a4e2914d1b647b98a";
+//        String url = "https://hifive-gateway-dev.hifiveai.com";
+//        String appkey = "5216d02806d5464b943492838b7e4390";
+//        String secret = "2d241e8f934d47d5";
 //        System.out.println("------------------------------------hifiveHQListenRequestTest");
 //        HFClient client = new DefaultHFClient(url, appkey, secret);
+//        HifiveBaseLoginRequest(client);
+
+        String url = "https://hifive-gateway-test.hifiveai.com";
+        String appkey = "25861e5063284e38a40bc960070b34ab";
+        String secret = "7a4e2914d1b647b98a";
+        System.out.println("------------------------------------hifiveHQListenRequestTest");
+        HFClient client = new DefaultHFClient(url, appkey, secret);
 //        HFTrailListen(client);
 //        HFTrafficTrialTest(client);
 //        HFUGCTrialTest(client);
@@ -87,60 +87,59 @@ public class DefaultClientTest {
         //HifiveBaseLoginRequest(client);
         //  HifiveBaseLoginRequest(client);
         /*hifiveSearchMusicRequestTest(client);*/
-        /*hifiveBaseFavoriteRequestTest(client);
-        hifiveBaseVisualRequestTest(client);
-        hifiveBaseWeatherRequestTest(client);
-
-        hifiveMusicConfigRequestTest(client);
+//        hifiveBaseFavoriteRequestTest(client);
+//        hifiveBaseVisualRequestTest(client);
+//        hifiveBaseWeatherRequestTest(client);
+//
+//        hifiveMusicConfigRequestTest(client);
         hifiveSearchMusicRequestTest(client);
-        hifiveSheetTagRequestTest(client);
-        hifiveTagSheetRequestTest(client);
-        hifiveSheetMusicRequestTest(client);
-        HifiveOrderAuthorizationRequestTest(client);
-
-
-        hifiveChannelRequestTest(client);
-        hifiveChannelSheetRequestTest(client);
-        hifiveHQListenSliceRequestTest(client);
-
-        hifiveHQListenRequestTest(client);
-        hifiveUGCListenRequestTest(client);
-        hifiveKListenRequestTest(client);
-
-        hifiveOrderMusicRequestTest(client);
-        hifiveOrderPublishRequestTest(client);
-
-
-        hifiveOrderDetailRequestTest(client);
-        hifiveOrderRefundRequestTest(client);
-        hifiveOrderTagRequestTest(client);
-        hifiveTrafficTagRequestTest(client);
-        hifiveTrafficGroupRequestTest(client);
-        hifiveOrderGroupRequestTest(client);
-
-
-        hifiveTrafficTagSheetRequestTest(client);
-        hifiveOrderTagSheetRequestTest(client);
-        hifiveTrafficGroupSheetRequestTest(client);
-        hifiveOrderGroupSheetRequestTest(client);
-        hifiveTrafficSheetMusicRequestTest(client);
-        hifiveOrderSheetMusicRequestTest(client);
-
-
-        hifiveOrderListenRequestTest(client);
-        hifiveTrafficListenRequestTest(client);
-        hifiveOrderListenSliceRequestTest(client);
-        hifiveTrafficListenSliceRequestTest(client);
-        hifiveOrderListenMixedRequestTest(client);
-        hifiveTrafficListenMixedRequestTest(client);
-
-
-        hifiveOrderSearchMusicRequestTest(client);
-        hifiveTrafficSearchMusicRequestTest(client);
-        hifiveTrafficTagMusicRequestTest(client);
-        hifiveOrderTagMusicRequestTest(client);
-        hifiveTrafficDownloadRequestTest(client);
-        */
+//        hifiveSheetTagRequestTest(client);
+//        hifiveTagSheetRequestTest(client);
+//        hifiveSheetMusicRequestTest(client);
+//        HifiveOrderAuthorizationRequestTest(client);
+//
+//
+//        hifiveChannelRequestTest(client);
+//        hifiveChannelSheetRequestTest(client);
+//        hifiveHQListenSliceRequestTest(client);
+//
+//        hifiveHQListenRequestTest(client);
+//        hifiveUGCListenRequestTest(client);
+//        hifiveKListenRequestTest(client);
+//
+//        hifiveOrderMusicRequestTest(client);
+//        hifiveOrderPublishRequestTest(client);
+//
+//
+//        hifiveOrderDetailRequestTest(client);
+//        hifiveOrderRefundRequestTest(client);
+//        hifiveOrderTagRequestTest(client);
+//        hifiveTrafficTagRequestTest(client);
+//        hifiveTrafficGroupRequestTest(client);
+//        hifiveOrderGroupRequestTest(client);
+//
+//
+//        hifiveTrafficTagSheetRequestTest(client);
+//        hifiveOrderTagSheetRequestTest(client);
+//        hifiveTrafficGroupSheetRequestTest(client);
+//        hifiveOrderGroupSheetRequestTest(client);
+//        hifiveTrafficSheetMusicRequestTest(client);
+//        hifiveOrderSheetMusicRequestTest(client);
+//
+//
+//        hifiveOrderListenRequestTest(client);
+//        hifiveTrafficListenRequestTest(client);
+//        hifiveOrderListenSliceRequestTest(client);
+//        hifiveTrafficListenSliceRequestTest(client);
+//        hifiveOrderListenMixedRequestTest(client);
+//        hifiveTrafficListenMixedRequestTest(client);
+//
+//
+//        hifiveOrderSearchMusicRequestTest(client);
+//        hifiveTrafficSearchMusicRequestTest(client);
+//        hifiveTrafficTagMusicRequestTest(client);
+//        hifiveOrderTagMusicRequestTest(client);
+//        hifiveTrafficDownloadRequestTest(client);
     }
 
     private static void HifiveBaseLoginRequest(HFClient client) {
@@ -351,7 +350,7 @@ public class DefaultClientTest {
         HFChannelSheetRequest request = new HFChannelSheetRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("1223234343");
-        request.setGroupId("fGGIsKue5VT");
+        request.setGroupId("4qy3vz0h89b");
         request.setLanguage(LangageEnum.CN.getValue());
         request.setRecoNum(10);
         request.setPage(1);
