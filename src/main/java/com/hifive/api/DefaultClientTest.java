@@ -17,11 +17,12 @@ public class DefaultClientTest {
 //        HFClient client = new DefaultHFClient(url, appkey, secret);
 //        HifiveBaseLoginRequest(client);
 
-        String url = "https://hifive-gateway-test.hifiveai.com";
-        String appkey = "25861e5063284e38a40bc960070b34ab";
-        String secret = "7a4e2914d1b647b98a";
-        System.out.println("------------------------------------hifiveHQListenRequestTest");
-        HFClient client = new DefaultHFClient(url, appkey, secret);
+//        String url = "https://hifive-gateway-test.hifiveai.com";
+//        String appkey = "25861e5063284e38a40bc960070b34ab";
+//        String secret = "7a4e2914d1b647b98a";
+//        System.out.println("------------------------------------hifiveHQListenRequestTest");
+//        HFClient client = new DefaultHFClient(url, appkey, secret);
+
 //        HFTrailListen(client);
 //        HFTrafficTrialTest(client);
 //        HFUGCTrialTest(client);
@@ -31,9 +32,9 @@ public class DefaultClientTest {
 //        hifiveUGCListenRequestTest(client);
 //        hifiveKListenRequestTest(client);
 //
-        hifiveTrafficReportListenRequestTest(client);
-        hifiveUGCReportListenRequestTest(client);
-        hifiveKReportListenRequestTest(client);
+//        hifiveTrafficReportListenRequestTest(client);
+//        hifiveUGCReportListenRequestTest(client);
+//        hifiveKReportListenRequestTest(client);
 /*        for (int i = 0;i<10; i++) {
 
             //  long time = System.currentTimeMillis();
