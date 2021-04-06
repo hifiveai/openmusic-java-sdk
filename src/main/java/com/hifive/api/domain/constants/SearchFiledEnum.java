@@ -1,14 +1,8 @@
 package com.hifive.api.domain.constants;
 
 /**
- * <p>
- *
- * </p>
- *
  * @author meiyang
  * @version 1.0
- * @review meiyang
- * @date 2021-03-31 19:11:59
  **/
 public enum SearchFiledEnum {
 
