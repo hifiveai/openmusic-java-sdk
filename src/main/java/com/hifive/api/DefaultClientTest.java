@@ -93,7 +93,7 @@ public class DefaultClientTest {
 //        hifiveBaseWeatherRequestTest(client);
 //
 //        hifiveMusicConfigRequestTest(client);
-        hifiveSearchMusicRequestTest(client);
+//        hifiveSearchMusicRequestTest(client);
 //        hifiveSheetTagRequestTest(client);
 //        hifiveTagSheetRequestTest(client);
 //        hifiveSheetMusicRequestTest(client);
