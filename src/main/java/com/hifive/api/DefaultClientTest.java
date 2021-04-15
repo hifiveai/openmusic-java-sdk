@@ -17,12 +17,6 @@ public class DefaultClientTest {
 //        HFClient client = new DefaultHFClient(url, appkey, secret);
 //        HifiveBaseLoginRequest(client);
 
-        String url = "https://gateway.open.hifiveai.com";
-        String appkey = "300a44d050c942eebeae8765a878b0ee";
-        String secret = "0e31fe11b31247fca8";
-        System.out.println("------------------------------------hifiveHQListenRequestTest");
-        HFClient client = new DefaultHFClient(url, appkey, secret);
-
 //        HFTrailListen(client);
 //        HFTrafficTrialTest(client);
 //        HFUGCTrialTest(client);
@@ -97,14 +91,14 @@ public class DefaultClientTest {
 //        hifiveSheetTagRequestTest(client);
 //        hifiveTagSheetRequestTest(client);
 //        hifiveSheetMusicRequestTest(client);
-        HifiveOrderAuthorizationRequestTest(client);
+//        HifiveOrderAuthorizationRequestTest(client);
 //
 //
 //        hifiveChannelRequestTest(client);
 //        hifiveChannelSheetRequestTest(client);
 //        hifiveHQListenSliceRequestTest(client);
 //
-        hifiveHQListenRequestTest(client);
+//        hifiveHQListenRequestTest(client);
 //        hifiveUGCListenRequestTest(client);
 //        hifiveKListenRequestTest(client);
 //
