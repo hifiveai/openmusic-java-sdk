@@ -1,6 +1,7 @@
 package com.hifive.api.response;
 
 import com.hifive.api.HFResponse;
+import com.hifive.api.domain.HFMusicLyricSize;
 import com.hifive.api.domain.HFMusicSize;
 import com.hifive.api.internal.mapping.ApiField;
 
@@ -15,13 +16,13 @@ public class HFKHQListenResponse extends HFResponse {
 
 
     @ApiField("data")
-    HFMusicSize hifiveMusicSize;
+    HFMusicLyricSize hifiveMusicSize;
 
-    public HFMusicSize getHifiveMusicSize() {
+    public HFMusicLyricSize getHifiveMusicSize() {
         return hifiveMusicSize;
     }
 
-    public void setHifiveMusicSize(HFMusicSize hifiveMusicSize) {
+    public void setHifiveMusicSize(HFMusicLyricSize hifiveMusicSize) {
         this.hifiveMusicSize = hifiveMusicSize;
     }
 }

@@ -10,18 +10,18 @@ public class DefaultClientTest {
 
     public static void main(String[] args) throws InterruptedException {
 
-//        String url = "https://hifive-gateway-dev.hifiveai.com";
-//        String appkey = "5216d02806d5464b943492838b7e4390";
-//        String secret = "2d241e8f934d47d5";
+//        String url = "https://hifive-openapi-qa.hifiveai.com";
+//        String appkey = "955342864fc74400b3a53952b00ca9d2";
+//        String secret = "1d6e5f81aeb84871aa";
 //        System.out.println("------------------------------------hifiveHQListenRequestTest");
 //        HFClient client = new DefaultHFClient(url, appkey, secret);
 //        HifiveBaseLoginRequest(client);
 
-//        String url = "https://hifive-gateway-test.hifiveai.com";
-//        String appkey = "25861e5063284e38a40bc960070b34ab";
-//        String secret = "7a4e2914d1b647b98a";
-//        System.out.println("------------------------------------hifiveHQListenRequestTest");
-//        HFClient client = new DefaultHFClient(url, appkey, secret);
+        String url = "https://gateway.open.hifiveai.com";
+        String appkey = "300a44d050c942eebeae8765a878b0ee";
+        String secret = "0e31fe11b31247fca8";
+        System.out.println("------------------------------------hifiveHQListenRequestTest");
+        HFClient client = new DefaultHFClient(url, appkey, secret);
 
 //        HFTrailListen(client);
 //        HFTrafficTrialTest(client);
@@ -97,22 +97,22 @@ public class DefaultClientTest {
 //        hifiveSheetTagRequestTest(client);
 //        hifiveTagSheetRequestTest(client);
 //        hifiveSheetMusicRequestTest(client);
-//        HifiveOrderAuthorizationRequestTest(client);
+        HifiveOrderAuthorizationRequestTest(client);
 //
 //
 //        hifiveChannelRequestTest(client);
 //        hifiveChannelSheetRequestTest(client);
 //        hifiveHQListenSliceRequestTest(client);
 //
-//        hifiveHQListenRequestTest(client);
+        hifiveHQListenRequestTest(client);
 //        hifiveUGCListenRequestTest(client);
 //        hifiveKListenRequestTest(client);
 //
 //        hifiveOrderMusicRequestTest(client);
+//        hifiveOrderDetailRequestTest(client);
 //        hifiveOrderPublishRequestTest(client);
 //
 //
-//        hifiveOrderDetailRequestTest(client);
 //        hifiveOrderRefundRequestTest(client);
 //        hifiveOrderTagRequestTest(client);
 //        hifiveTrafficTagRequestTest(client);
@@ -172,7 +172,7 @@ public class DefaultClientTest {
         request.setClientId("1223234343");
         request.setToken("22a772b569c714daa9d4d5a8a05e299f");
         try {
-            HFBehaviorResponse response = client.execute(request);
+            HFBaseReportResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -189,7 +189,7 @@ public class DefaultClientTest {
         request.setClientId("1223234343");
         request.setToken("a0ef39d567c08eadb3da1f1b60728e67");
         try {
-            HFHotResponse response = client.execute(request);
+            HFBaseHotResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -259,10 +259,12 @@ public class DefaultClientTest {
         request.setMethod(HFRequest.METHOD_POST);
         request.setPage(1);
         request.setPageSize(10);
-        request.setTagIds("696,703");
+//        request.setTagIds("1000");
         request.setSearchFiled(SearchFiledEnum.MUSIC.getValue());
-        request.setSearchSmart(SearchSmartEnum.NO.getValue());
-        request.setNonce("fee23fwy9cef16fsw6387wg7m61uw676");
+//        request.setSearchFiled("aa");
+//        request.setSearchSmart(SearchSmartEnum.NO.getValue());
+        request.setKeyword("梅阳");
+//        request.setNonce("fee23fwy9cef16fsw6387wg7m61uw676");
         request.setClientId("jisuapi55667788");
         try {
             HFSearchMusicResponse response = client.execute(request);
@@ -326,9 +328,9 @@ public class DefaultClientTest {
         request.setBrand("HIFIVE音乐开放平台");
         request.setPeriod(PeriodEnum.THREE_YEAR.getValue());
         request.setProjectName("小嗨nbdb");
-        request.setOrderIds("1434556569145");
+        request.setOrderIds("hifivecd79222bdf214390813221a7e0c0e42d");
         try {
-            HFAuthorizationResponse response = client.execute(request);
+            HFOrderAuthorizationResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -353,7 +355,7 @@ public class DefaultClientTest {
         HFChannelSheetRequest request = new HFChannelSheetRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("1223234343");
-        request.setGroupId("4qy3vz0h89b");
+//        request.setGroupId("yIhufTMANVCBBB");
         request.setLanguage(LangageEnum.CN.getValue());
         request.setRecoNum(10);
         request.setPage(1);
@@ -369,14 +371,14 @@ public class DefaultClientTest {
 
 
     private static void hifiveHQListenRequestTest(HFClient client) {
-        HFHQListenRequest request = new HFHQListenRequest();
+        HFTrafficHQListenRequest request = new HFTrafficHQListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("InstaOpen202012010000360001");
-        request.setMusicId("125F34CDDDF6");
+        request.setMusicId("2F084494DE");
         /*request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
         try {
-            HFHQListenResponse response = client.execute(request);
+            HFTrafficHQListenResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -387,7 +389,7 @@ public class DefaultClientTest {
         HFUGCHQListenRequest request = new HFUGCHQListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("InstaOpen202012010000360001");
-        request.setMusicId("CFE6475822DF");
+        request.setMusicId("2F084494DE");
         /*request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
         try {
@@ -402,7 +404,7 @@ public class DefaultClientTest {
         HFKHQListenRequest request = new HFKHQListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("InstaOpen202012010000360001");
-        request.setMusicId("CFE6475822DF");
+        request.setMusicId("2F084494DE");
         /*request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
         try {
@@ -557,11 +559,11 @@ public class DefaultClientTest {
         HFOrderMusicRequest request = new HFOrderMusicRequest();
         request.setMethod(HFRequest.METHOD_POST);
         request.setClientId("1223234343");
-        request.setOrderId("14345565455656gd");
+        request.setOrderId("sfsdfs");
         request.setSubject("nYyple");
         request.setClientId("DXQOY");
         request.setWorkId("uEC00xeWbExGNilHpSN7MoM3AalWqwUp");
-        request.setMusic("[{\"versionId\":\"B7B810AABADF\",\"price\":20,\"num\":1}]");
+        request.setMusic("[{\"versionId\":\"2F084494DE\",\"price\":20,\"num\":1}]");
         request.setTotalFee(1556);
         request.setDeadline(50);
         request.setLanguage(LangageEnum.CN.getValue());
@@ -596,7 +598,7 @@ public class DefaultClientTest {
         HFOrderDetailRequest request = new HFOrderDetailRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("1223234343");
-        request.setOrderId("1434556569145");
+        request.setOrderId("aaaaaaaaaaaaaaaaaa1");
         try {
             HFOrderDetailResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));

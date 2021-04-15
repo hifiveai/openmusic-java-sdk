@@ -2,11 +2,11 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HFAuthorizationResponse;
+import com.hifive.api.response.HFOrderAuthorizationResponse;
 
 import java.util.Map;
 
-public class HFOrderAuthorizationRequest extends HFBaseRequest<HFAuthorizationResponse> {
+public class HFOrderAuthorizationRequest extends HFBaseRequest<HFOrderAuthorizationResponse> {
 
 
     private String companyName;
@@ -131,8 +131,8 @@ public class HFOrderAuthorizationRequest extends HFBaseRequest<HFAuthorizationRe
     }
 
 
-    public Class<HFAuthorizationResponse> getResponseClass() {
-        return HFAuthorizationResponse.class;
+    public Class<HFOrderAuthorizationResponse> getResponseClass() {
+        return HFOrderAuthorizationResponse.class;
     }
 
     @Override

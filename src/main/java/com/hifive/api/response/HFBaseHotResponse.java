@@ -11,7 +11,7 @@ import com.hifive.api.internal.mapping.ApiField;
  * @author yong.huang
  * @since 1.0, Sep 12, 2009
  */
-public class HFHotResponse extends HFResponse {
+public class HFBaseHotResponse extends HFResponse {
     /*    @ApiField("data")
         MusicPage page;*/
     @ApiField("data")

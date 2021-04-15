@@ -2,6 +2,7 @@ package com.hifive.api.response;
 
 import com.hifive.api.HFResponse;
 import com.hifive.api.domain.common.Order;
+import com.hifive.api.domain.common.OrderLyric;
 import com.hifive.api.internal.mapping.ApiField;
 
 /**
@@ -13,14 +14,14 @@ import com.hifive.api.internal.mapping.ApiField;
 public class HFOrderDetailResponse extends HFResponse {
 
     @ApiField("data")
-    Order order;
+    OrderLyric order;
 
 
-    public Order getOrder() {
+    public OrderLyric getOrder() {
         return order;
     }
 
-    public void setOrder(Order order) {
+    public void setOrder(OrderLyric order) {
         this.order = order;
     }
 }
