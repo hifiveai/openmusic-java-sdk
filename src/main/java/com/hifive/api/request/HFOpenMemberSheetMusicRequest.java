@@ -46,7 +46,7 @@ public class HFOpenMemberSheetMusicRequest extends HFPageRequest<HFOpenMemberShe
 
     @Override
     public Class<HFOpenMemberSheetMusicResponse> getResponseClass() {
-        return null;
+        return HFOpenMemberSheetMusicResponse.class;
     }
 
     @Override

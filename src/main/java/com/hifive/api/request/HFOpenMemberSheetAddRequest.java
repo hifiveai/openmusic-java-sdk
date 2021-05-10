@@ -33,7 +33,7 @@ public class HFOpenMemberSheetAddRequest extends HFBaseRequest<HFOpenMemberSheet
 
     @Override
     public Class<HFOpenMemberSheetAddResponse> getResponseClass() {
-        return null;
+        return HFOpenMemberSheetAddResponse.class;
     }
 
     @Override

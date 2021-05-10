@@ -97,7 +97,7 @@ public class HFOpenMemberLoginRequest extends HFBaseRequest<HFOpenMemberLoginRes
 
     @Override
     public Class<HFOpenMemberLoginResponse> getResponseClass() {
-        return null;
+        return HFOpenMemberLoginResponse.class;
     }
 
     @Override

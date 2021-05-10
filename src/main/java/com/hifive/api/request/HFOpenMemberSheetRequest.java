@@ -32,7 +32,7 @@ public class HFOpenMemberSheetRequest extends HFPageRequest<HFOpenMemberSheetRes
 
     @Override
     public Class<HFOpenMemberSheetResponse> getResponseClass() {
-        return null;
+        return HFOpenMemberSheetResponse.class;
     }
 
     @Override

@@ -33,7 +33,7 @@ public class HFOpenMemberSheetDeleteRequest extends HFBaseRequest<HFOpenMemberSh
 
     @Override
     public Class<HFOpenMemberSheetDeleteResponse> getResponseClass() {
-        return null;
+        return HFOpenMemberSheetDeleteResponse.class;
     }
 
     @Override

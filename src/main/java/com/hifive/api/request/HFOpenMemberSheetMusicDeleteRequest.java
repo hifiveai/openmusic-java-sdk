@@ -43,7 +43,7 @@ public class HFOpenMemberSheetMusicDeleteRequest extends HFBaseRequest<HFOpenMem
 
     @Override
     public Class<HFOpenMemberSheetMusicDeleteResponse> getResponseClass() {
-        return null;
+        return HFOpenMemberSheetMusicDeleteResponse.class;
     }
 
     @Override

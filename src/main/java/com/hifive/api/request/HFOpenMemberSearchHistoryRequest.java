@@ -31,7 +31,7 @@ public class HFOpenMemberSearchHistoryRequest extends HFPageRequest<HFOpenMember
 
     @Override
     public Class<HFOpenMemberSearchHistoryResponse> getResponseClass() {
-        return null;
+        return HFOpenMemberSearchHistoryResponse.class;
     }
 
     @Override

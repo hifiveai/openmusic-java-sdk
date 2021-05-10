@@ -30,7 +30,7 @@ public class HFOpenMemberSearchHistoryClearRequest extends HFBaseRequest<HFOpenM
 
     @Override
     public Class<HFOpenMemberSearchHistoryClearResponse> getResponseClass() {
-        return null;
+        return HFOpenMemberSearchHistoryClearResponse.class;
     }
 
     @Override
