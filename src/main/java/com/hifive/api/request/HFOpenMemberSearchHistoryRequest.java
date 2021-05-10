@@ -22,6 +22,8 @@ public class HFOpenMemberSearchHistoryRequest extends HFPageRequest<HFOpenMember
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
+                put("Page", getPage());
+                put("PageSize", getPageSize());
             }
         };
         return txtParams;
