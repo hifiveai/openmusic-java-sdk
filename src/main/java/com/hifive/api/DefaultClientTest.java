@@ -11,11 +11,17 @@ public class DefaultClientTest {
     public static void main(String[] args) throws InterruptedException {
 
 //        String url = "https://hifive-openapi-qa.hifiveai.com";
-//        String appkey = "955342864fc74400b3a53952b00ca9d2";
-//        String secret = "1d6e5f81aeb84871aa";
+//        String appkey = "6bea19aa99a14d6d866dbb8c46c32819";
+//        String secret = "a9dc8d2219e54833ad";
 //        System.out.println("------------------------------------hifiveHQListenRequestTest");
 //        HFClient client = new DefaultHFClient(url, appkey, secret);
 //        HifiveBaseLoginRequest(client);
+        String url = "https://gateway.open.hifiveai.com";
+        String appkey = "955342864fc74400b3a53952b00ca9d2";
+        String secret = "1d6e5f81aeb84871aa";
+        System.out.println("------------------------------------hifiveHQListenRequestTest");
+        HFClient client = new DefaultHFClient(url, appkey, secret);
+
 
 //        HFTrailListen(client);
 //        HFTrafficTrialTest(client);
@@ -94,7 +100,7 @@ public class DefaultClientTest {
 //        HifiveOrderAuthorizationRequestTest(client);
 //
 //
-//        hifiveChannelRequestTest(client);
+        hifiveChannelRequestTest(client);
 //        hifiveChannelSheetRequestTest(client);
 //        hifiveHQListenSliceRequestTest(client);
 //
@@ -257,7 +263,7 @@ public class DefaultClientTest {
         request.setSearchFiled(SearchFiledEnum.MUSIC.getValue());
 //        request.setSearchFiled("aa");
 //        request.setSearchSmart(SearchSmartEnum.NO.getValue());
-        request.setKeyword("梅阳");
+        request.setKeyword("情");
 //        request.setNonce("fee23fwy9cef16fsw6387wg7m61uw676");
         request.setClientId("jisuapi55667788");
         try {
@@ -368,7 +374,7 @@ public class DefaultClientTest {
         HFTrafficHQListenRequest request = new HFTrafficHQListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("InstaOpen202012010000360001");
-        request.setMusicId("2F084494DE");
+        request.setMusicId("2F087F2A41");
         /*request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
         try {
