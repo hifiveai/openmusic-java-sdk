@@ -14,6 +14,9 @@ import java.util.Map;
  * @date 2021-05-10 20:13:43
  **/
 public class HFOpenMemberSheetRequest extends HFPageRequest<HFOpenMemberSheetResponse>{
+
+    private String memberOutId;
+
     @Override
     public String getApiMethodName() {
         return "OpenMemberSheet";
@@ -25,6 +28,7 @@ public class HFOpenMemberSheetRequest extends HFPageRequest<HFOpenMemberSheetRes
             {
                 put("Page", getPage());
                 put("PageSize", getPageSize());
+                put("memberOutId",getMemberOutId());
             }
         };
         return txtParams;
@@ -43,5 +47,13 @@ public class HFOpenMemberSheetRequest extends HFPageRequest<HFOpenMemberSheetRes
     @Override
     public void putOtherTextParam(String key, String value) {
 
+    }
+
+    public String getMemberOutId() {
+        return memberOutId;
+    }
+
+    public void setMemberOutId(String memberOutId) {
+        this.memberOutId = memberOutId;
     }
 }

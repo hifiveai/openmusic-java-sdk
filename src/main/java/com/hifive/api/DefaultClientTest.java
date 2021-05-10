@@ -5,22 +5,34 @@ import com.hifive.api.domain.constants.*;
 import com.hifive.api.request.*;
 import com.hifive.api.response.*;
 
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+
 public class DefaultClientTest {
 
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, ApiException {
 
-        String url = "https://hifive-openapi-qa.hifiveai.com";
-        String appkey = "6bea19aa99a14d6d866dbb8c46c32819";
-        String secret = "a9dc8d2219e54833ad";
+        String url = "https://hifive-gateway-test.hifiveai.com";
+        String appkey = "ee45ca73bf1746428b2a942e017056df";
+        String secret = "cd231e0c8d314074b2";
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
+
+//        String url = "https://hifive-openapi-qa.hifiveai.com";
+//        String appkey = "6bea19aa99a14d6d866dbb8c46c32819";
+//        String secret = "a9dc8d2219e54833ad";
+//        System.out.println("------------------------------------hifiveHQListenRequestTest");
+//        HFClient client = new DefaultHFClient(url, appkey, secret);
 //        HifiveBaseLoginRequest(client);
 //        String url = "https://gateway.open.hifiveai.com";
 //        String appkey = "955342864fc74400b3a53952b00ca9d2";
 //        String secret = "1d6e5f81aeb84871aa";
 //        System.out.println("------------------------------------hifiveHQListenRequestTest");
 //        HFClient client = new DefaultHFClient(url, appkey, secret);
+
+        //OpenApi C端
+        hifiveOpenMemberSheetRequestRequest(client);
 
 
 //        HFTrailListen(client);
@@ -100,7 +112,7 @@ public class DefaultClientTest {
 //        HifiveOrderAuthorizationRequestTest(client);
 //
 //
-        hifiveChannelRequestTest(client);
+//        hifiveChannelRequestTest(client);
 //        hifiveChannelSheetRequestTest(client);
 //        hifiveHQListenSliceRequestTest(client);
 //
@@ -960,5 +972,26 @@ public class DefaultClientTest {
         } catch (ApiException e) {
             e.printStackTrace();
         }
+    }
+
+
+    private static void hifiveOpenMemberLoginRequest(HFClient client){
+        HFOpenMemberLoginRequest request = new HFOpenMemberLoginRequest();
+        request.setMethod(HFRequest.METHOD_GET);
+        request.setMemberId("meiyang");
+        request.setBirthday(LocalDateTime.now().toEpochSecond(ZoneOffset.UTC));
+    }
+
+
+    private static void hifiveOpenMemberSheetRequestRequest(HFClient client) throws ApiException {
+        HFOpenMemberSheetRequest request = new HFOpenMemberSheetRequest();
+        request.setMethod(HFRequest.METHOD_GET);
+        request.setClientId("meiyang");
+        request.setMemberOutId("meiyang");
+        request.setPage(1);
+        request.setPage(10);
+        request.setTimestamp(System.currentTimeMillis());
+        HFOpenMemberSheetResponse response = client.execute(request);
+        System.out.println(JSON.toJSON(response));
     }
 }
