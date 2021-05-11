@@ -21,11 +21,7 @@ public class HFOpenMemberLoginRequest extends HFBaseRequest<HFOpenMemberLoginRes
     /**
      * 会员名称
      */
-    private String memberName;
-    /**
-     * 外部会员ID
-     */
-    private String memberId;
+    private String nickname;
     /**
      * 设备ID
      */
@@ -78,8 +74,7 @@ public class HFOpenMemberLoginRequest extends HFBaseRequest<HFOpenMemberLoginRes
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
                 put("appId", getAppId());
-                put("memberName", getMemberName());
-                put("memberId", getMemberId());
+                put("nickname",getNickname());
                 put("deviceId", getDeviceId());
                 put("timestamp", getTimestamp());
                 put("secret", getSecret());
@@ -116,22 +111,6 @@ public class HFOpenMemberLoginRequest extends HFBaseRequest<HFOpenMemberLoginRes
 
     public void setAppId(String appId) {
         this.appId = appId;
-    }
-
-    public String getMemberName() {
-        return memberName;
-    }
-
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
-    }
-
-    public String getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(String memberId) {
-        this.memberId = memberId;
     }
 
     public String getDeviceId() {
@@ -214,5 +193,13 @@ public class HFOpenMemberLoginRequest extends HFBaseRequest<HFOpenMemberLoginRes
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 }

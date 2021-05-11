@@ -13,7 +13,13 @@ import java.util.Map;
  * @date 2021-05-10 20:14:35
  **/
 public class HFOpenMemberSheetDeleteRequest extends HFBaseRequest<HFOpenMemberSheetDeleteResponse> {
-
+    /**
+     * 接口token
+     */
+    private String accessToken;
+    /**
+     * 歌单ID
+     */
     private Long sheetId;
 
     @Override
@@ -26,6 +32,7 @@ public class HFOpenMemberSheetDeleteRequest extends HFBaseRequest<HFOpenMemberSh
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
                 put("sheetId", getSheetId());
+                put("accessToken", getAccessToken());
             }
         };
         return txtParams;
@@ -52,5 +59,13 @@ public class HFOpenMemberSheetDeleteRequest extends HFBaseRequest<HFOpenMemberSh
 
     public void setSheetId(Long sheetId) {
         this.sheetId = sheetId;
+    }
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 }

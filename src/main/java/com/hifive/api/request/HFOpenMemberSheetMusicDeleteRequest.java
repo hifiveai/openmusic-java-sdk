@@ -14,7 +14,10 @@ import java.util.Map;
  * @date 2021-05-10 20:15:35
  **/
 public class HFOpenMemberSheetMusicDeleteRequest extends HFBaseRequest<HFOpenMemberSheetMusicDeleteResponse> {
-
+    /**
+     * 接口token
+     */
+    private String accessToken;
     /**
      * 歌单Id
      */
@@ -36,6 +39,7 @@ public class HFOpenMemberSheetMusicDeleteRequest extends HFBaseRequest<HFOpenMem
             {
                 put("sheetId", getSheetId());
                 put("musicId", getMusicId());
+                put("accessToken", getAccessToken());
             }
         };
         return txtParams;
@@ -70,5 +74,13 @@ public class HFOpenMemberSheetMusicDeleteRequest extends HFBaseRequest<HFOpenMem
 
     public void setMusicId(List<String> musicId) {
         this.musicId = musicId;
+    }
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 }

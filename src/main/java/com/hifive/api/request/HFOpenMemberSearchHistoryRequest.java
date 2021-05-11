@@ -13,6 +13,12 @@ import java.util.Map;
  * @date 2021-05-10 20:16:10
  **/
 public class HFOpenMemberSearchHistoryRequest extends HFPageRequest<HFOpenMemberSearchHistoryResponse> {
+
+    /**
+     * 接口token
+     */
+    private String accessToken;
+
     @Override
     public String getApiMethodName() {
         return "OpenMemberSearchHistory";
@@ -24,6 +30,7 @@ public class HFOpenMemberSearchHistoryRequest extends HFPageRequest<HFOpenMember
             {
                 put("Page", getPage());
                 put("PageSize", getPageSize());
+                put("accessToken", getAccessToken());
             }
         };
         return txtParams;
@@ -42,5 +49,13 @@ public class HFOpenMemberSearchHistoryRequest extends HFPageRequest<HFOpenMember
     @Override
     public void putOtherTextParam(String key, String value) {
 
+    }
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 }

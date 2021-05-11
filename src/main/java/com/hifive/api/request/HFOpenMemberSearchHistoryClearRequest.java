@@ -14,6 +14,11 @@ import java.util.Map;
  **/
 public class HFOpenMemberSearchHistoryClearRequest extends HFBaseRequest<HFOpenMemberSearchHistoryClearResponse> {
 
+    /**
+     * 接口token
+     */
+    private String accessToken;
+
     @Override
     public String getApiMethodName() {
         return "OpenMemberSearchHistoryClear";
@@ -23,6 +28,7 @@ public class HFOpenMemberSearchHistoryClearRequest extends HFBaseRequest<HFOpenM
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
+                put("accessToken", getAccessToken());
             }
         };
         return txtParams;
@@ -43,4 +49,11 @@ public class HFOpenMemberSearchHistoryClearRequest extends HFBaseRequest<HFOpenM
 
     }
 
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
 }

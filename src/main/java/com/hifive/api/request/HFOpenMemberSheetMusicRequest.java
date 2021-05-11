@@ -15,7 +15,10 @@ import java.util.Map;
  **/
 public class HFOpenMemberSheetMusicRequest extends HFPageRequest<HFOpenMemberSheetMusicResponse>{
 
-
+    /**
+     * 接口token
+     */
+    private String accessToken;
     /**
      * 歌单ID
      */
@@ -39,6 +42,7 @@ public class HFOpenMemberSheetMusicRequest extends HFPageRequest<HFOpenMemberShe
                 put("musicId", getLanguage());
                 put("Page", getPage());
                 put("PageSize", getPageSize());
+                put("accessToken", getAccessToken());
             }
         };
         return txtParams;
@@ -73,5 +77,13 @@ public class HFOpenMemberSheetMusicRequest extends HFPageRequest<HFOpenMemberShe
 
     public void setLanguage(Integer language) {
         this.language = language;
+    }
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 }

@@ -2,7 +2,6 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HFOpenMemberSheetMusicResponse;
 import com.hifive.api.response.HFOpenMemberSheetResponse;
 
 import java.util.Map;
@@ -13,11 +12,11 @@ import java.util.Map;
  * @review meiyang
  * @date 2021-05-10 20:13:43
  **/
-public class HFOpenMemberSheetRequest extends HFPageRequest<HFOpenMemberSheetResponse>{
+public class HFOpenMemberSheetRequest extends HFPageRequest<HFOpenMemberSheetResponse> {
 
-
-    private String memberOutId;
-
+    /**
+     * 接口token
+     */
     private String accessToken;
 
     @Override
@@ -31,8 +30,7 @@ public class HFOpenMemberSheetRequest extends HFPageRequest<HFOpenMemberSheetRes
             {
                 put("Page", getPage());
                 put("PageSize", getPageSize());
-                put("memberOutId",getMemberOutId());
-                put("accessToken",getAccessToken());
+                put("accessToken", getAccessToken());
             }
         };
         return txtParams;
@@ -51,14 +49,6 @@ public class HFOpenMemberSheetRequest extends HFPageRequest<HFOpenMemberSheetRes
     @Override
     public void putOtherTextParam(String key, String value) {
 
-    }
-
-    public String getMemberOutId() {
-        return memberOutId;
-    }
-
-    public void setMemberOutId(String memberOutId) {
-        this.memberOutId = memberOutId;
     }
 
     public String getAccessToken() {

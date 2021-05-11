@@ -31,6 +31,8 @@ public class DefaultClientTest {
 //        System.out.println("------------------------------------hifiveHQListenRequestTest");
 //        HFClient client = new DefaultHFClient(url, appkey, secret);
 
+        hifiveOpenMemberLoginRequest(client);
+
         //OpenApi C端
         hifiveOpenMemberSheetRequestRequest(client);
 
@@ -978,15 +980,14 @@ public class DefaultClientTest {
     private static void hifiveOpenMemberLoginRequest(HFClient client) throws ApiException {
         HFOpenMemberLoginRequest request = new HFOpenMemberLoginRequest();
         request.setMethod(HFRequest.METHOD_POST);
-        request.setMemberId("meiyang");
-        request.setMemberName("meiyang");
+        request.setNickname("meiyang");
         request.setDeviceId("dfkjdkf");
         request.setAppId("ee45ca73bf1746428b2a942e017056df");
         request.setTimestamp(System.currentTimeMillis());
         request.setBirthday(LocalDateTime.now().toEpochSecond(ZoneOffset.UTC));
         request.setGender(GenderEnum.MAN.ordinal());
         request.setClientId("meiyang");
-        request.setFavoriteSinger("周杰伦");
+//        request.setFavoriteSinger("周杰伦");
         HFOpenMemberLoginResponse response = client.execute(request);
         System.out.println(JSON.toJSON(response));
     }
@@ -996,7 +997,6 @@ public class DefaultClientTest {
         HFOpenMemberSheetRequest request = new HFOpenMemberSheetRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("meiyang");
-        request.setMemberOutId("meiyang");
         request.setTimestamp(System.currentTimeMillis());
         request.setPage(1);
         request.setPageSize(10);

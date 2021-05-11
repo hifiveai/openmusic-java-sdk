@@ -14,6 +14,13 @@ import java.util.Map;
  **/
 public class HFOpenMemberSheetAddRequest extends HFBaseRequest<HFOpenMemberSheetAddResponse> {
 
+    /**
+     * 接口token
+     */
+    private String accessToken;
+    /**
+     * 歌单名称
+     */
     private String sheetName;
 
     @Override
@@ -26,6 +33,7 @@ public class HFOpenMemberSheetAddRequest extends HFBaseRequest<HFOpenMemberSheet
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
                 put("sheetName", getSheetName());
+                put("accessToken", getAccessToken());
             }
         };
         return txtParams;
@@ -52,5 +60,13 @@ public class HFOpenMemberSheetAddRequest extends HFBaseRequest<HFOpenMemberSheet
 
     public void setSheetName(String sheetName) {
         this.sheetName = sheetName;
+    }
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 }
