@@ -15,6 +15,7 @@ import java.util.Map;
  **/
 public class HFOpenMemberSheetRequest extends HFPageRequest<HFOpenMemberSheetResponse>{
 
+
     private String memberOutId;
 
     private String accessToken;
