@@ -13,7 +13,7 @@ import java.util.Map;
  * @review meiyang
  * @date 2021-05-10 20:15:20
  **/
-public class HFOpenMemberSheetMusicRequest extends HFPageRequest<HFOpenMemberSheetMusicResponse>{
+public class HFOpenMemberSheetMusicRequest extends HFPageRequest<HFOpenMemberSheetMusicResponse> {
 
     /**
      * 接口token
@@ -28,6 +28,8 @@ public class HFOpenMemberSheetMusicRequest extends HFPageRequest<HFOpenMemberShe
      * 0-中文,1-英文
      */
     private Integer language;
+
+    private String musicId;
 
     @Override
     public String getApiMethodName() {
@@ -63,6 +65,22 @@ public class HFOpenMemberSheetMusicRequest extends HFPageRequest<HFOpenMemberShe
 
     }
 
+    public Integer getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Integer language) {
+        this.language = language;
+    }
+
+    public String getMusicId() {
+        return musicId;
+    }
+
+    public void setMusicId(String musicId) {
+        this.musicId = musicId;
+    }
+
     public Long getSheetId() {
         return sheetId;
     }
@@ -71,13 +89,6 @@ public class HFOpenMemberSheetMusicRequest extends HFPageRequest<HFOpenMemberShe
         this.sheetId = sheetId;
     }
 
-    public Integer getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(Integer language) {
-        this.language = language;
-    }
 
     public String getAccessToken() {
         return accessToken;
