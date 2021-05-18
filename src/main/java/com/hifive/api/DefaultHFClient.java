@@ -1,6 +1,8 @@
 package com.hifive.api;
 
 
+import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.hifive.api.internal.parser.json.ObjectJsonParser;
 import com.hifive.api.internal.parser.xml.ObjectXmlParser;
 import com.hifive.api.internal.util.*;
@@ -185,7 +187,8 @@ public class DefaultHFClient implements HFClient {
         } catch (IOException e) {
             throw new ApiException(e);
         }
-
+        System.out.println(JSON.toJSON(requestHolder.getAllParams()));
+        System.out.println(JSON.toJSON(requestHolder.getApplicationHeaders()));
         String rsp = null;
         long time = System.currentTimeMillis();
         try {

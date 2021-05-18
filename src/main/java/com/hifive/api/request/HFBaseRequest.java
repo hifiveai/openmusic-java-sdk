@@ -10,6 +10,7 @@ import org.apache.commons.lang3.StringUtils;
  */
 public abstract class HFBaseRequest<T extends HFResponse> implements HFRequest<T> {
 
+
     private String clientId;
 
     private String version = "V4.1.1";

@@ -64,6 +64,8 @@ public class HFOpenMemberLoginRequest extends HFBaseRequest<HFOpenMemberLoginRes
      */
     private String phone;
 
+    private String memberOutId;
+
     @Override
     public String getApiMethodName() {
         return "OpenMemberLogin";
@@ -85,6 +87,7 @@ public class HFOpenMemberLoginRequest extends HFBaseRequest<HFOpenMemberLoginRes
                 put("location", getLocation());
                 put("favoriteSinger", getFavoriteSinger());
                 put("phone", getPhone());
+                put("memberOutId", getMemberOutId());
             }
         };
         return txtParams;
@@ -201,5 +204,13 @@ public class HFOpenMemberLoginRequest extends HFBaseRequest<HFOpenMemberLoginRes
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
+    }
+
+    public String getMemberOutId() {
+        return memberOutId;
+    }
+
+    public void setMemberOutId(String memberOutId) {
+        this.memberOutId = memberOutId;
     }
 }

@@ -26,7 +26,7 @@ public class HFOpenMemberSheetMusicAddRequest extends HFBaseRequest<HFOpenMember
     /**
      * 音乐ID列表
      */
-    private List<String> musicId;
+    private String musicId;
 
     @Override
     public String getApiMethodName() {
@@ -68,11 +68,12 @@ public class HFOpenMemberSheetMusicAddRequest extends HFBaseRequest<HFOpenMember
         this.sheetId = sheetId;
     }
 
-    public List<String> getMusicId() {
+
+    public String getMusicId() {
         return musicId;
     }
 
-    public void setMusicId(List<String> musicId) {
+    public void setMusicId(String musicId) {
         this.musicId = musicId;
     }
 
