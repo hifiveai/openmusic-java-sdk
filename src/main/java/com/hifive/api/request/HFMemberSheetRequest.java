@@ -2,7 +2,7 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HFOpenMemberSearchHistoryResponse;
+import com.hifive.api.response.HFMemberSheetResponse;
 
 import java.util.Map;
 
@@ -10,18 +10,20 @@ import java.util.Map;
  * @author meiyang
  * @version 1.0
  * @review meiyang
- * @date 2021-05-10 20:16:10
+ * @date 2021-05-10 20:13:43
  **/
-public class HFOpenMemberSearchHistoryRequest extends HFPageRequest<HFOpenMemberSearchHistoryResponse> {
+public class HFMemberSheetRequest extends HFPageRequest<HFMemberSheetResponse> {
 
     /**
      * 接口token
      */
     private String accessToken;
 
+    private String memberOutId;
+
     @Override
     public String getApiMethodName() {
-        return "OpenMemberSearchHistory";
+        return "MemberSheet";
     }
 
     @Override
@@ -31,14 +33,15 @@ public class HFOpenMemberSearchHistoryRequest extends HFPageRequest<HFOpenMember
                 put("Page", getPage());
                 put("PageSize", getPageSize());
                 put("accessToken", getAccessToken());
+                put("memberOutId", getMemberOutId());
             }
         };
         return txtParams;
     }
 
     @Override
-    public Class<HFOpenMemberSearchHistoryResponse> getResponseClass() {
-        return HFOpenMemberSearchHistoryResponse.class;
+    public Class<HFMemberSheetResponse> getResponseClass() {
+        return HFMemberSheetResponse.class;
     }
 
     @Override
@@ -49,6 +52,14 @@ public class HFOpenMemberSearchHistoryRequest extends HFPageRequest<HFOpenMember
     @Override
     public void putOtherTextParam(String key, String value) {
 
+    }
+
+    public String getMemberOutId() {
+        return memberOutId;
+    }
+
+    public void setMemberOutId(String memberOutId) {
+        this.memberOutId = memberOutId;
     }
 
     public String getAccessToken() {

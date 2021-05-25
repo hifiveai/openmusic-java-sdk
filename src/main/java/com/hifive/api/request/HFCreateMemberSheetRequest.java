@@ -2,7 +2,7 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HFOpenMemberSheetMusicClearResponse;
+import com.hifive.api.response.HFCreateMemberSheetResponse;
 
 import java.util.Map;
 
@@ -10,28 +10,29 @@ import java.util.Map;
  * @author meiyang
  * @version 1.0
  * @review meiyang
- * @date 2021-05-10 20:15:52
+ * @date 2021-05-10 20:14:14
  **/
-public class HFOpenMemberSheetMusicClearRequest extends HFBaseRequest<HFOpenMemberSheetMusicClearResponse> {
+public class HFCreateMemberSheetRequest extends HFBaseRequest<HFCreateMemberSheetResponse> {
+
     /**
      * 接口token
      */
     private String accessToken;
     /**
-     * 歌单ID
+     * 歌单名称
      */
-    private Long sheetId;
+    private String sheetName;
 
     @Override
     public String getApiMethodName() {
-        return "OpenMemberSheetMusicClear";
+        return "CreateMemberSheet";
     }
 
     @Override
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
-                put("sheetId", getSheetId());
+                put("sheetName", getSheetName());
                 put("accessToken", getAccessToken());
             }
         };
@@ -39,8 +40,8 @@ public class HFOpenMemberSheetMusicClearRequest extends HFBaseRequest<HFOpenMemb
     }
 
     @Override
-    public Class<HFOpenMemberSheetMusicClearResponse> getResponseClass() {
-        return HFOpenMemberSheetMusicClearResponse.class;
+    public Class<HFCreateMemberSheetResponse> getResponseClass() {
+        return HFCreateMemberSheetResponse.class;
     }
 
     @Override
@@ -53,12 +54,12 @@ public class HFOpenMemberSheetMusicClearRequest extends HFBaseRequest<HFOpenMemb
 
     }
 
-    public Long getSheetId() {
-        return sheetId;
+    public String getSheetName() {
+        return sheetName;
     }
 
-    public void setSheetId(Long sheetId) {
-        this.sheetId = sheetId;
+    public void setSheetName(String sheetName) {
+        this.sheetName = sheetName;
     }
 
     public String getAccessToken() {

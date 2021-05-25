@@ -2,35 +2,34 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HFOpenMemberSheetMusicDeleteResponse;
+import com.hifive.api.response.HFAddMemberSheetMusicResponse;
 
-import java.util.List;
 import java.util.Map;
 
 /**
  * @author meiyang
  * @version 1.0
  * @review meiyang
- * @date 2021-05-10 20:15:35
+ * @date 2021-05-10 20:14:56
  **/
-public class HFOpenMemberSheetMusicDeleteRequest extends HFBaseRequest<HFOpenMemberSheetMusicDeleteResponse> {
+public class HFAddMemberSheetMusicRequest extends HFBaseRequest<HFAddMemberSheetMusicResponse> {
     /**
      * 接口token
      */
     private String accessToken;
     /**
-     * 歌单Id
+     * 歌单ID
      */
     private Long sheetId;
 
     /**
-     * 音乐Id
+     * 音乐ID列表
      */
-    private List<String> musicId;
+    private String musicId;
 
     @Override
     public String getApiMethodName() {
-        return "OpenMemberSheetMusicDelete";
+        return "AddMemberSheetMusic";
     }
 
     @Override
@@ -46,8 +45,8 @@ public class HFOpenMemberSheetMusicDeleteRequest extends HFBaseRequest<HFOpenMem
     }
 
     @Override
-    public Class<HFOpenMemberSheetMusicDeleteResponse> getResponseClass() {
-        return HFOpenMemberSheetMusicDeleteResponse.class;
+    public Class<HFAddMemberSheetMusicResponse> getResponseClass() {
+        return HFAddMemberSheetMusicResponse.class;
     }
 
     @Override
@@ -68,11 +67,12 @@ public class HFOpenMemberSheetMusicDeleteRequest extends HFBaseRequest<HFOpenMem
         this.sheetId = sheetId;
     }
 
-    public List<String> getMusicId() {
+
+    public String getMusicId() {
         return musicId;
     }
 
-    public void setMusicId(List<String> musicId) {
+    public void setMusicId(String musicId) {
         this.musicId = musicId;
     }
 

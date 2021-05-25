@@ -2,34 +2,43 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HFOpenMemberSheetResponse;
+import com.hifive.api.response.HFRemoveMemberSheetMusicResponse;
 
+import java.util.List;
 import java.util.Map;
 
 /**
  * @author meiyang
  * @version 1.0
  * @review meiyang
- * @date 2021-05-10 20:13:43
+ * @date 2021-05-10 20:15:35
  **/
-public class HFOpenMemberSheetRequest extends HFPageRequest<HFOpenMemberSheetResponse> {
-
+public class HFRemoveMemberSheetMusicRequest extends HFBaseRequest<HFRemoveMemberSheetMusicResponse> {
     /**
      * 接口token
      */
     private String accessToken;
+    /**
+     * 歌单Id
+     */
+    private Long sheetId;
+
+    /**
+     * 音乐Id
+     */
+    private List<String> musicId;
 
     @Override
     public String getApiMethodName() {
-        return "OpenMemberSheet";
+        return "RemoveMemberSheetMusic";
     }
 
     @Override
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
-                put("Page", getPage());
-                put("PageSize", getPageSize());
+                put("sheetId", getSheetId());
+                put("musicId", getMusicId());
                 put("accessToken", getAccessToken());
             }
         };
@@ -37,8 +46,8 @@ public class HFOpenMemberSheetRequest extends HFPageRequest<HFOpenMemberSheetRes
     }
 
     @Override
-    public Class<HFOpenMemberSheetResponse> getResponseClass() {
-        return HFOpenMemberSheetResponse.class;
+    public Class<HFRemoveMemberSheetMusicResponse> getResponseClass() {
+        return HFRemoveMemberSheetMusicResponse.class;
     }
 
     @Override
@@ -49,6 +58,22 @@ public class HFOpenMemberSheetRequest extends HFPageRequest<HFOpenMemberSheetRes
     @Override
     public void putOtherTextParam(String key, String value) {
 
+    }
+
+    public Long getSheetId() {
+        return sheetId;
+    }
+
+    public void setSheetId(Long sheetId) {
+        this.sheetId = sheetId;
+    }
+
+    public List<String> getMusicId() {
+        return musicId;
+    }
+
+    public void setMusicId(List<String> musicId) {
+        this.musicId = musicId;
     }
 
     public String getAccessToken() {

@@ -2,18 +2,18 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HFOpenMemberSheetMusicAddResponse;
+import com.hifive.api.response.HFMemberSheetMusicResponse;
 
-import java.util.List;
 import java.util.Map;
 
 /**
  * @author meiyang
  * @version 1.0
  * @review meiyang
- * @date 2021-05-10 20:14:56
+ * @date 2021-05-10 20:15:20
  **/
-public class HFOpenMemberSheetMusicAddRequest extends HFBaseRequest<HFOpenMemberSheetMusicAddResponse> {
+public class HFMemberSheetMusicRequest extends HFPageRequest<HFMemberSheetMusicResponse> {
+
     /**
      * 接口token
      */
@@ -24,13 +24,15 @@ public class HFOpenMemberSheetMusicAddRequest extends HFBaseRequest<HFOpenMember
     private Long sheetId;
 
     /**
-     * 音乐ID列表
+     * 0-中文,1-英文
      */
-    private List<String> musicId;
+    private Integer language;
+
+    private String musicId;
 
     @Override
     public String getApiMethodName() {
-        return "OpenMemberSheetMusicAdd";
+        return "MemberSheetMusic";
     }
 
     @Override
@@ -38,7 +40,9 @@ public class HFOpenMemberSheetMusicAddRequest extends HFBaseRequest<HFOpenMember
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
                 put("sheetId", getSheetId());
-                put("musicId", getMusicId());
+                put("musicId", getLanguage());
+                put("Page", getPage());
+                put("PageSize", getPageSize());
                 put("accessToken", getAccessToken());
             }
         };
@@ -46,8 +50,8 @@ public class HFOpenMemberSheetMusicAddRequest extends HFBaseRequest<HFOpenMember
     }
 
     @Override
-    public Class<HFOpenMemberSheetMusicAddResponse> getResponseClass() {
-        return HFOpenMemberSheetMusicAddResponse.class;
+    public Class<HFMemberSheetMusicResponse> getResponseClass() {
+        return HFMemberSheetMusicResponse.class;
     }
 
     @Override
@@ -60,6 +64,22 @@ public class HFOpenMemberSheetMusicAddRequest extends HFBaseRequest<HFOpenMember
 
     }
 
+    public Integer getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Integer language) {
+        this.language = language;
+    }
+
+    public String getMusicId() {
+        return musicId;
+    }
+
+    public void setMusicId(String musicId) {
+        this.musicId = musicId;
+    }
+
     public Long getSheetId() {
         return sheetId;
     }
@@ -68,13 +88,6 @@ public class HFOpenMemberSheetMusicAddRequest extends HFBaseRequest<HFOpenMember
         this.sheetId = sheetId;
     }
 
-    public List<String> getMusicId() {
-        return musicId;
-    }
-
-    public void setMusicId(List<String> musicId) {
-        this.musicId = musicId;
-    }
 
     public String getAccessToken() {
         return accessToken;

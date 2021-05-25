@@ -2,7 +2,7 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HFOpenMemberSearchHistoryClearResponse;
+import com.hifive.api.response.HFClearMemberSheetMusicResponse;
 
 import java.util.Map;
 
@@ -10,24 +10,28 @@ import java.util.Map;
  * @author meiyang
  * @version 1.0
  * @review meiyang
- * @date 2021-05-10 20:16:26
+ * @date 2021-05-10 20:15:52
  **/
-public class HFOpenMemberSearchHistoryClearRequest extends HFBaseRequest<HFOpenMemberSearchHistoryClearResponse> {
-
+public class HFClearMemberSheetMusicRequest extends HFBaseRequest<HFClearMemberSheetMusicResponse> {
     /**
      * 接口token
      */
     private String accessToken;
+    /**
+     * 歌单ID
+     */
+    private Long sheetId;
 
     @Override
     public String getApiMethodName() {
-        return "OpenMemberSearchHistoryClear";
+        return "ClearMemberSheetMusic";
     }
 
     @Override
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
+                put("sheetId", getSheetId());
                 put("accessToken", getAccessToken());
             }
         };
@@ -35,8 +39,8 @@ public class HFOpenMemberSearchHistoryClearRequest extends HFBaseRequest<HFOpenM
     }
 
     @Override
-    public Class<HFOpenMemberSearchHistoryClearResponse> getResponseClass() {
-        return HFOpenMemberSearchHistoryClearResponse.class;
+    public Class<HFClearMemberSheetMusicResponse> getResponseClass() {
+        return HFClearMemberSheetMusicResponse.class;
     }
 
     @Override
@@ -47,6 +51,14 @@ public class HFOpenMemberSearchHistoryClearRequest extends HFBaseRequest<HFOpenM
     @Override
     public void putOtherTextParam(String key, String value) {
 
+    }
+
+    public Long getSheetId() {
+        return sheetId;
+    }
+
+    public void setSheetId(Long sheetId) {
+        this.sheetId = sheetId;
     }
 
     public String getAccessToken() {

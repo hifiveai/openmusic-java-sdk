@@ -1,28 +1,25 @@
 package com.hifive.api.response;
 
-
 import com.hifive.api.HFResponse;
-import com.hifive.api.domain.LoginToken;
+import com.hifive.api.domain.common.AccessToken;
 import com.hifive.api.internal.mapping.ApiField;
 
 /**
- * TOP API: alipay.user.get response.
- *
- * @author auto create
- * @since 1.0, null
- */
+ * @author meiyang
+ * @version 1.0
+ * @review meiyang
+ * @date 2021-05-10 20:16:42
+ **/
 public class HFBaseLoginResponse extends HFResponse {
 
-    private static final long serialVersionUID = 8416376835315756311L;
-
     @ApiField("data")
-    private LoginToken data;
+    private AccessToken accessToken;
 
-    public LoginToken getData() {
-        return data;
+    public AccessToken getAccessToken() {
+        return accessToken;
     }
 
-    public void setData(LoginToken data) {
-        this.data = data;
+    public void setAccessToken(AccessToken accessToken) {
+        this.accessToken = accessToken;
     }
 }

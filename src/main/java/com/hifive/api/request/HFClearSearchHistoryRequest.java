@@ -2,7 +2,7 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HFOpenMemberSheetAddResponse;
+import com.hifive.api.response.HFClearSearchHistoryResponse;
 
 import java.util.Map;
 
@@ -10,29 +10,24 @@ import java.util.Map;
  * @author meiyang
  * @version 1.0
  * @review meiyang
- * @date 2021-05-10 20:14:14
+ * @date 2021-05-10 20:16:26
  **/
-public class HFOpenMemberSheetAddRequest extends HFBaseRequest<HFOpenMemberSheetAddResponse> {
+public class HFClearSearchHistoryRequest extends HFBaseRequest<HFClearSearchHistoryResponse> {
 
     /**
      * 接口token
      */
     private String accessToken;
-    /**
-     * 歌单名称
-     */
-    private String sheetName;
 
     @Override
     public String getApiMethodName() {
-        return "OpenMemberSheetAdd";
+        return "ClearSearchHistory";
     }
 
     @Override
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
-                put("sheetName", getSheetName());
                 put("accessToken", getAccessToken());
             }
         };
@@ -40,8 +35,8 @@ public class HFOpenMemberSheetAddRequest extends HFBaseRequest<HFOpenMemberSheet
     }
 
     @Override
-    public Class<HFOpenMemberSheetAddResponse> getResponseClass() {
-        return HFOpenMemberSheetAddResponse.class;
+    public Class<HFClearSearchHistoryResponse> getResponseClass() {
+        return HFClearSearchHistoryResponse.class;
     }
 
     @Override
@@ -52,14 +47,6 @@ public class HFOpenMemberSheetAddRequest extends HFBaseRequest<HFOpenMemberSheet
     @Override
     public void putOtherTextParam(String key, String value) {
 
-    }
-
-    public String getSheetName() {
-        return sheetName;
-    }
-
-    public void setSheetName(String sheetName) {
-        this.sheetName = sheetName;
     }
 
     public String getAccessToken() {

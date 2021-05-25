@@ -8,5 +8,5 @@ import com.hifive.api.HFResponse;
  * @review meiyang
  * @date 2021-05-10 20:14:35
  **/
-public class HFOpenMemberSheetDeleteResponse  extends HFResponse {
+public class HFDeleteMemberSheetResponse extends HFResponse {
 }

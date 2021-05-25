@@ -6,7 +6,7 @@ import com.hifive.api.HFResponse;
  * @author meiyang
  * @version 1.0
  * @review meiyang
- * @date 2021-05-10 20:14:14
+ * @date 2021-05-10 20:15:35
  **/
-public class HFOpenMemberSheetAddResponse  extends HFResponse {
+public class HFRemoveMemberSheetMusicResponse extends HFResponse {
 }

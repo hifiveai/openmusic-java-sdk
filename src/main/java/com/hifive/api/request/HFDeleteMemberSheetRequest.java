@@ -2,7 +2,7 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HFOpenMemberSheetDeleteResponse;
+import com.hifive.api.response.HFDeleteMemberSheetResponse;
 
 import java.util.Map;
 
@@ -12,7 +12,7 @@ import java.util.Map;
  * @review meiyang
  * @date 2021-05-10 20:14:35
  **/
-public class HFOpenMemberSheetDeleteRequest extends HFBaseRequest<HFOpenMemberSheetDeleteResponse> {
+public class HFDeleteMemberSheetRequest extends HFBaseRequest<HFDeleteMemberSheetResponse> {
     /**
      * 接口token
      */
@@ -24,7 +24,7 @@ public class HFOpenMemberSheetDeleteRequest extends HFBaseRequest<HFOpenMemberSh
 
     @Override
     public String getApiMethodName() {
-        return "OpenMemberSheetDelete";
+        return "DeleteMemberSheet";
     }
 
     @Override
@@ -39,8 +39,8 @@ public class HFOpenMemberSheetDeleteRequest extends HFBaseRequest<HFOpenMemberSh
     }
 
     @Override
-    public Class<HFOpenMemberSheetDeleteResponse> getResponseClass() {
-        return HFOpenMemberSheetDeleteResponse.class;
+    public Class<HFDeleteMemberSheetResponse> getResponseClass() {
+        return HFDeleteMemberSheetResponse.class;
     }
 
     @Override

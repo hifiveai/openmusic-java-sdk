@@ -14,14 +14,14 @@ public class AccessToken implements Serializable {
     /**
      * 登录令牌
      */
-    @ApiField("accessToken")
-    private String accessToken;
+    @ApiField("token")
+    private String token;
 
-    public String getAccessToken() {
-        return accessToken;
+    public String getToken() {
+        return token;
     }
 
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
+    public void setToken(String token) {
+        this.token = token;
     }
 }

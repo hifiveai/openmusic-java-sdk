@@ -3,25 +3,25 @@ package com.hifive.api.response;
 import com.hifive.api.HFResponse;
 import com.hifive.api.domain.common.HFMusicInfoDetail;
 import com.hifive.api.domain.common.HifivePage;
-import com.hifive.api.domain.common.MemberSheet;
 import com.hifive.api.internal.mapping.ApiField;
 
 /**
  * @author meiyang
  * @version 1.0
  * @review meiyang
- * @date 2021-05-10 20:13:43
+ * @date 2021-05-10 20:15:20
  **/
-public class HFOpenMemberSheetResponse  extends HFResponse {
+public class HFMemberSheetMusicResponse extends HFResponse {
 
     @ApiField("data")
-    HifivePage<MemberSheet> hifivePage;
+    HifivePage<HFMusicInfoDetail> hifivePage;
 
-    public HifivePage<MemberSheet> getHifivePage() {
+    public HifivePage<HFMusicInfoDetail> getHifivePage() {
         return hifivePage;
     }
 
-    public void setHifivePage(HifivePage<MemberSheet> hifivePage) {
+    public void setHifivePage(HifivePage<HFMusicInfoDetail> hifivePage) {
         this.hifivePage = hifivePage;
     }
+
 }
