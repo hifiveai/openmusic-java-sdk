@@ -1,6 +1,7 @@
 package com.hifive.api.response;
 
 import com.hifive.api.HFResponse;
+import com.hifive.api.domain.common.HFAuthorizeMusicDetail;
 import com.hifive.api.domain.common.HFMusicInfoDetail;
 import com.hifive.api.domain.common.HifivePage;
 import com.hifive.api.domain.common.TagPrice;
@@ -15,13 +16,13 @@ import com.hifive.api.internal.mapping.ApiField;
 public class HFAuthorizeMusicResponse extends HFResponse {
 
     @ApiField("data")
-    HifivePage<HFMusicInfoDetail> hifivePage;
+    HifivePage<HFAuthorizeMusicDetail> hifivePage;
 
-    public HifivePage<HFMusicInfoDetail> getHifivePage() {
+    public HifivePage<HFAuthorizeMusicDetail> getHifivePage() {
         return hifivePage;
     }
 
-    public void setHifivePage(HifivePage<HFMusicInfoDetail> hifivePage) {
+    public void setHifivePage(HifivePage<HFAuthorizeMusicDetail> hifivePage) {
         this.hifivePage = hifivePage;
     }
 }
