@@ -19,7 +19,6 @@ public class HFMemberSheetRequest extends HFPageRequest<HFMemberSheetResponse> {
      */
     private String accessToken;
 
-    private String memberOutId;
 
     @Override
     public String getApiMethodName() {
@@ -33,7 +32,6 @@ public class HFMemberSheetRequest extends HFPageRequest<HFMemberSheetResponse> {
                 put("Page", getPage());
                 put("PageSize", getPageSize());
                 put("accessToken", getAccessToken());
-                put("memberOutId", getMemberOutId());
             }
         };
         return txtParams;
@@ -54,13 +52,6 @@ public class HFMemberSheetRequest extends HFPageRequest<HFMemberSheetResponse> {
 
     }
 
-    public String getMemberOutId() {
-        return memberOutId;
-    }
-
-    public void setMemberOutId(String memberOutId) {
-        this.memberOutId = memberOutId;
-    }
 
     public String getAccessToken() {
         return accessToken;
