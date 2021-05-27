@@ -33,28 +33,34 @@ public class DefaultClientTest {
 
         String url = "https://gateway.open.hifiveai.com";
 //        String url = "http://127.0.0.1:8011";
-        String appkey = "7463cad33bd44afa81c663d9608669aa";
-        String secret = "ea38ce173dbf43148b";
+        String appkey = "300a44d050c942eebeae8765a878b0ee";
+        String secret = "0e31fe11b31247fca8";
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
 
-//        hifiveOpenMemberLoginRequest(client);
-
         //OpenApi C端
+        hifiveOpenMemberLoginRequest(client);
 //        hifiveOpenMemberSheetRequestRequest(client);
+//        hifiveOpenMemberSheetRequestRequest(client);
+//        hifiveOpenMemberSheetMusicRequestRequest(client);
+//        hifiveOpenMemberSheetMusicAddRequestRequest(client);
+//        hFOpenMemberSheetMusicDeleteRequest(client);
+//        hFCreateMemberSheetRequest(client);
+//        hFClearSearchHistoryRequest(client);
+//        hFClearMemberSheetMusicRequest(client);
+//        hFDeleteMemberSheetRequest(client);
+//        hFSearchHistoryRequest(client);
 
 //        hifiveBaseHotRequestTest(client);
 //        for (int i = 0;i< 20 ;i++) {
 //            hifiveOpenMemberSheetMusicAddRequestRequest(client);
 //        }
-        HFSearchHistoryRequest(client);
-        //hifiveOpenMemberSheetMusicAddRequestRequest(client);
         // HifiveBaseLoginRequest(client);
         //hifiveBaseFavoriteRequestTest(client);
         //OpenApi C端
-        // hifiveOpenMemberSheetRequestRequest(client);
 
-//        hifiveOpenMemberSheetMusicRequestRequest(client);
+
+
 
 //        HFTrailListen(client);
 //        HFTrafficTrialTest(client);
@@ -1094,7 +1100,7 @@ public class DefaultClientTest {
     }
 
 
-    private static void HFClearSearchHistoryRequest(HFClient client) throws ApiException {
+    private static void hFClearSearchHistoryRequest(HFClient client) throws ApiException {
         HFClearSearchHistoryRequest request = new HFClearSearchHistoryRequest();
         request.setMethod(HFRequest.METHOD_POST);
         request.setClientId("test_hifive_123");
@@ -1107,7 +1113,7 @@ public class DefaultClientTest {
 }
 
 
-    private static void HFClearMemberSheetMusicRequest(HFClient client) throws ApiException {
+    private static void hFClearMemberSheetMusicRequest(HFClient client) throws ApiException {
         HFClearMemberSheetMusicRequest request = new HFClearMemberSheetMusicRequest();
         request.setMethod(HFRequest.METHOD_POST);
         request.setClientId("test_hifive_123");
@@ -1121,7 +1127,7 @@ public class DefaultClientTest {
     }
 
 
-    private static void HFDeleteMemberSheetRequest(HFClient client) throws ApiException {
+    private static void hFDeleteMemberSheetRequest(HFClient client) throws ApiException {
         HFDeleteMemberSheetRequest request = new HFDeleteMemberSheetRequest();
         request.setMethod(HFRequest.METHOD_POST);
         request.setClientId("test_hifive_123");
@@ -1136,7 +1142,7 @@ public class DefaultClientTest {
 
 
 
-    private static void HFSearchHistoryRequest(HFClient client) throws ApiException {
+    private static void hFSearchHistoryRequest(HFClient client) throws ApiException {
         HFSearchHistoryRequest request = new HFSearchHistoryRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("meiyang");
