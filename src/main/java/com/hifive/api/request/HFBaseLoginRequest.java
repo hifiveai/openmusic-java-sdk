@@ -14,163 +14,99 @@ import java.util.Map;
  **/
 public class HFBaseLoginRequest extends HFBaseRequest<HFBaseLoginResponse> {
 
+    private HifiveHashMap udfParams; // add user-defined text parameters
+    private Long timestamp;
+
     /**
-     * B端用户APPID
-     */
-    private String appId;
-    /**
-     * 会员名称
+     * 昵称
      */
     private String nickname;
+
     /**
-     * 设备ID
+     * 性别，0-未知（默认）1-男2-女
      */
-    private String deviceId;
+    private int gender;
+
     /**
-     * 时间戳
+     * 10位时间戳，可根据年龄粗略计算
      */
-    private Long timestamp;
+    private int birthday;
+
     /**
-     * secret(API装载)
-     */
-    private String secret;
-    /**
-     * companyId(API装载)
-     */
-    private Long companyId;
-    /*-----------------------扩展字段-----------------------------------*/
-    /**
-     * 头像URL
-     */
-    private String headerUrl;
-    /**
-     * 性别,未知：0，男：1，女：2
-     */
-    private Integer gender;
-    /**
-     * 生日
-     */
-    private Long birthday;
-    /**
-     * 经纬度信息，纬度在前(30.779164,103.94547)
+     * 所在城市
      */
     private String location;
+
     /**
-     * 喜欢的歌手名，多个用英文逗号隔开
+     * 所在省分
+     */
+    private String province;
+
+    /**
+     * 所在国家
+     */
+    private String country;
+
+    /**
+     * 所受教育水平
+     */
+    private int education;
+
+    /**
+     * 职业
+     */
+    private int profession;
+
+    /**
+     * 是否属于组织机构类型用户（to B），默认false
+     */
+    private boolean isOrganization;
+
+    /**
+     * json字符串，保留字段用于保存平台特定用户其他信息
+     */
+    private String reserve;
+
+    /**
+     * 喜欢的歌手名集合
      */
     private String favoriteSinger;
+
     /**
-     * 手机号
+     * 喜欢的音乐流派集合
      */
-    private String phone;
+    private String favoriteGenre;
 
-    private String memberOutId;
 
-    @Override
-    public String getApiMethodName() {
-        return "BaseLogin";
+    public HifiveHashMap getUdfParams() {
+        return udfParams;
     }
 
-    @Override
-    public Map<String, String> getTextParams() {
-        HifiveHashMap txtParams = new HifiveHashMap() {
-            {
-                put("appId", getAppId());
-                put("nickname",getNickname());
-                put("deviceId", getDeviceId());
-                put("timestamp", getTimestamp());
-                put("secret", getSecret());
-                put("companyId", getCompanyId());
-                put("headerUrl", getHeaderUrl());
-                put("gender", getGender());
-                put("birthday", getBirthday());
-                put("location", getLocation());
-                put("favoriteSinger", getFavoriteSinger());
-                put("phone", getPhone());
-                put("memberOutId", getMemberOutId());
-            }
-        };
-        return txtParams;
+    public void setUdfParams(HifiveHashMap udfParams) {
+        this.udfParams = udfParams;
     }
 
-    @Override
-    public Class<HFBaseLoginResponse> getResponseClass() {
-        return HFBaseLoginResponse.class;
+    public String getNickname() {
+        return nickname;
     }
 
-    @Override
-    public void check() throws ApiRuleException {
-
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    @Override
-    public void putOtherTextParam(String key, String value) {
-
-    }
-
-    public String getAppId() {
-        return appId;
-    }
-
-    public void setAppId(String appId) {
-        this.appId = appId;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    @Override
-    public Long getTimestamp() {
-        return timestamp;
-    }
-
-    @Override
-    public void setTimestamp(Long timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public String getSecret() {
-        return secret;
-    }
-
-    public void setSecret(String secret) {
-        this.secret = secret;
-    }
-
-    public Long getCompanyId() {
-        return companyId;
-    }
-
-    public void setCompanyId(Long companyId) {
-        this.companyId = companyId;
-    }
-
-    public String getHeaderUrl() {
-        return headerUrl;
-    }
-
-    public void setHeaderUrl(String headerUrl) {
-        this.headerUrl = headerUrl;
-    }
-
-    public Integer getGender() {
+    public int getGender() {
         return gender;
     }
 
-    public void setGender(Integer gender) {
+    public void setGender(int gender) {
         this.gender = gender;
     }
 
-    public Long getBirthday() {
+    public int getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Long birthday) {
+    public void setBirthday(int birthday) {
         this.birthday = birthday;
     }
 
@@ -182,6 +118,54 @@ public class HFBaseLoginRequest extends HFBaseRequest<HFBaseLoginResponse> {
         this.location = location;
     }
 
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public int getEducation() {
+        return education;
+    }
+
+    public void setEducation(int education) {
+        this.education = education;
+    }
+
+    public int getProfession() {
+        return profession;
+    }
+
+    public void setProfession(int profession) {
+        this.profession = profession;
+    }
+
+    public boolean isOrganization() {
+        return isOrganization;
+    }
+
+    public void setIsOrganization(boolean organization) {
+        isOrganization = organization;
+    }
+
+    public String getReserve() {
+        return reserve;
+    }
+
+    public void setReserve(String reserve) {
+        this.reserve = reserve;
+    }
+
     public String getFavoriteSinger() {
         return favoriteSinger;
     }
@@ -190,27 +174,64 @@ public class HFBaseLoginRequest extends HFBaseRequest<HFBaseLoginResponse> {
         this.favoriteSinger = favoriteSinger;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getFavoriteGenre() {
+        return favoriteGenre;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setFavoriteGenre(String favoriteGenre) {
+        this.favoriteGenre = favoriteGenre;
     }
 
-    public String getNickname() {
-        return nickname;
+    public Long getTimestamp() {
+        return this.timestamp;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
     }
 
-    public String getMemberOutId() {
-        return memberOutId;
+    public String getApiMethodName() {
+        return "BaseLogin";
     }
 
-    public void setMemberOutId(String memberOutId) {
-        this.memberOutId = memberOutId;
+    public Map<String, String> getTextParams() {
+        HifiveHashMap txtParams = new HifiveHashMap() {
+            {
+                put("nickname", getNickname());
+                put("gender", getGender());
+                put("birthday", getBirthday());
+                put("location", getLocation());
+                put("education", getEducation());
+                put("profession", getProfession());
+                put("isOrganization", isOrganization());
+                put("favoriteSinger", getFavoriteSinger());
+                put("favoriteGenre", getFavoriteGenre());
+                put("country", getCountry());
+                put("location", getLocation());
+                put("province", getProvince());
+                put("reserve", getReserve());
+            }
+        };
+        if (this.udfParams != null) {
+            txtParams.putAll(this.udfParams);
+        }
+        return txtParams;
     }
+
+
+    public void putOtherTextParam(String key, String value) {
+        if (this.udfParams == null) {
+            this.udfParams = new HifiveHashMap();
+        }
+        this.udfParams.put(key, value);
+    }
+
+
+    public Class<HFBaseLoginResponse> getResponseClass() {
+        return HFBaseLoginResponse.class;
+    }
+
+    public void check() throws ApiRuleException {
+    }
+
 }
