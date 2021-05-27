@@ -40,7 +40,7 @@ public class HFMemberSheetMusicRequest extends HFPageRequest<HFMemberSheetMusicR
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
                 put("sheetId", getSheetId());
-                put("musicId", getLanguage());
+                put("musicId", getMusicId());
                 put("Page", getPage());
                 put("PageSize", getPageSize());
                 put("accessToken", getAccessToken());

@@ -34,12 +34,13 @@ public class DefaultClientTest {
 //        HFClient client = new DefaultHFClient(url, appkey, secret);
 
         String url = "https://hifive-gateway-pre.hifiveai.com";
+//        String url = "http://127.0.0.1:8011";
         String appkey = "300a44d050c942eebeae8765a878b0ee";
         String secret = "0e31fe11b31247fca8";
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
 
-        hifiveOpenMemberLoginRequest(client);
+//        hifiveOpenMemberLoginRequest(client);
 
         //OpenApi C端
 //        hifiveOpenMemberSheetRequestRequest(client);
@@ -55,7 +56,7 @@ public class DefaultClientTest {
         //OpenApi C端
        // hifiveOpenMemberSheetRequestRequest(client);
 
-        //hifiveOpenMemberSheetMusicRequestRequest(client);
+//        hifiveOpenMemberSheetMusicRequestRequest(client);
 
 //        HFTrailListen(client);
 //        HFTrafficTrialTest(client);
@@ -177,26 +178,26 @@ public class DefaultClientTest {
 //        hifiveTrafficDownloadRequestTest(client);
     }
 
-    private static void HifiveBaseLoginRequest(HFClient client) {
-        HFBaseLoginRequest1 request = new HFBaseLoginRequest1();
-        request.setMethod(HFRequest.METHOD_POST);
-        request.setBirthday(1594639058);
-        request.setCountry("乐山");
-        request.setEducation(EducationEnum.MIDDLE_SCHOOLE.ordinal());
-        request.setGender(GenderEnum.MAN.ordinal());
-        request.setNickname("谎言");
-        request.setClientId("1223234343");
-        request.setProfession(8);
-        request.setIsOrganization(true);
-        request.setFavoriteSinger("周杰伦");
-        request.setFavoriteGenre("1");
-        try {
-            HFBaseLoginResponse response = client.execute(request);
-            System.out.println(JSON.toJSON(response));
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
-    }
+//    private static void HifiveBaseLoginRequest(HFClient client) {
+//        HFBaseLoginRequest1 request = new HFBaseLoginRequest1();
+//        request.setMethod(HFRequest.METHOD_POST);
+//        request.setBirthday(1594639058);
+//        request.setCountry("乐山");
+//        request.setEducation(EducationEnum.MIDDLE_SCHOOLE.ordinal());
+//        request.setGender(GenderEnum.MAN.ordinal());
+//        request.setNickname("谎言");
+//        request.setClientId("1223234343");
+//        request.setProfession(8);
+//        request.setIsOrganization(true);
+//        request.setFavoriteSinger("周杰伦");
+//        request.setFavoriteGenre("1");
+//        try {
+//            HFBaseLoginResponse response = client.execute(request);
+//            System.out.println(JSON.toJSON(response));
+//        } catch (ApiException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     private static void hifiveBaseReportRequest(HFClient client) {
         HFBaseReportRequest request = new HFBaseReportRequest();
@@ -340,7 +341,7 @@ public class DefaultClientTest {
         HFSheetMusicRequest request = new HFSheetMusicRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("1223234343");
-        request.setSheetId(1203L);
+        request.setSheetId(1564L);
         request.setLanguage(1);
         request.setPage(1);
         request.setPageSize(5);
@@ -424,7 +425,7 @@ public class DefaultClientTest {
         HFUGCHQListenRequest request = new HFUGCHQListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("InstaOpen202012010000360001");
-        request.setMusicId("2F084494DE");
+        request.setMusicId("4B40CC524");
         /*request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
         try {
@@ -1011,18 +1012,18 @@ public class DefaultClientTest {
         request.setClientId("meiyang3");
         request.setMemberOutId("meiyang3");
 
-        request.setCountry("乐山");
-        request.setEducation(EducationEnum.MIDDLE_SCHOOLE.ordinal());
-        request.setGender(GenderEnum.MAN.ordinal());
-        request.setNickname("谎言");
-        request.setClientId("1223234343");
-        request.setProfession(8);
-        request.setIsOrganization(true);
-        request.setFavoriteSinger("周杰伦");
-        request.setFavoriteGenre("1");
+//        request.setCountry("乐山");
+//        request.setEducation(EducationEnum.MIDDLE_SCHOOLE.ordinal());
+//        request.setGender(GenderEnum.MAN.ordinal());
+//        request.setNickname("谎言");
+//        request.setClientId("1223234343");
+//        request.setProfession(8);
+//        request.setIsOrganization(true);
 //        request.setFavoriteSinger("周杰伦");
-        HFBaseLoginResponse response = client.execute(request);
-        System.out.println(JSON.toJSON(response));
+//        request.setFavoriteGenre("1");
+////        request.setFavoriteSinger("周杰伦");
+//        HFBaseLoginResponse response = client.execute(request);
+//        System.out.println(JSON.toJSON(response));
     }
 
 
@@ -1044,9 +1045,9 @@ public class DefaultClientTest {
     private static void hifiveOpenMemberSheetMusicRequestRequest(HFClient client) throws ApiException {
         HFMemberSheetMusicRequest request = new HFMemberSheetMusicRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("meiyang");
-        request.setMusicId("B7B810A5B4B7");
-        request.setSheetId(155457L);
+        request.setClientId("hifivetest-wangjiamin");
+//        request.setMusicId("B7B810A5B4B7");
+        request.setSheetId(26561L);
         request.setTimestamp(System.currentTimeMillis());
         request.setPage(1);
         request.setPageSize(10);
