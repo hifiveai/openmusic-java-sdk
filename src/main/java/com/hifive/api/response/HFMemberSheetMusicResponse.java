@@ -2,6 +2,7 @@ package com.hifive.api.response;
 
 import com.hifive.api.HFResponse;
 import com.hifive.api.domain.common.HFMusicInfoDetail;
+import com.hifive.api.domain.common.HifiveLiveApiPage;
 import com.hifive.api.domain.common.HifivePage;
 import com.hifive.api.internal.mapping.ApiField;
 
@@ -13,15 +14,19 @@ import com.hifive.api.internal.mapping.ApiField;
  **/
 public class HFMemberSheetMusicResponse extends HFResponse {
 
+
+
     @ApiField("data")
-    HifivePage<HFMusicInfoDetail> hifivePage;
+    HifiveLiveApiPage<HFMusicInfoDetail> hifiveLiveApiPage;
 
-    public HifivePage<HFMusicInfoDetail> getHifivePage() {
-        return hifivePage;
+    public HifiveLiveApiPage<HFMusicInfoDetail> getHifiveLiveApiPage() {
+        return hifiveLiveApiPage;
     }
 
-    public void setHifivePage(HifivePage<HFMusicInfoDetail> hifivePage) {
-        this.hifivePage = hifivePage;
+    public void setHifiveLiveApiPage(HifiveLiveApiPage<HFMusicInfoDetail> hifiveLiveApiPage) {
+        this.hifiveLiveApiPage = hifiveLiveApiPage;
     }
+
+
 
 }

@@ -1,5 +1,7 @@
 package com.hifive.api.domain.common;
 
+import com.hifive.api.internal.mapping.ApiField;
+
 import java.io.Serializable;
 
 /**
@@ -15,21 +17,25 @@ public class MemberSheet implements Serializable {
     /**
      * Id
      */
+    @ApiField("sheetId")
     private Long sheetId;
 
     /**
      * 类型
      */
+    @ApiField("type")
     private Integer type;
 
     /**
      * 名称
      */
+    @ApiField("sheetName")
     private String sheetName;
 
     /**
      * 创建时间
      */
+    @ApiField("createTime")
     private String createTime;
 
     public Long getSheetId() {

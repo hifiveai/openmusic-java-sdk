@@ -16,6 +16,10 @@ public class HFBaseLoginRequest extends HFBaseRequest<HFBaseLoginResponse> {
 
     private HifiveHashMap udfParams; // add user-defined text parameters
     private Long timestamp;
+    /**
+     * appId
+     */
+    private String appId;
 
     /**
      * 昵称
@@ -190,6 +194,14 @@ public class HFBaseLoginRequest extends HFBaseRequest<HFBaseLoginResponse> {
         this.timestamp = timestamp;
     }
 
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
+    }
+
     public String getApiMethodName() {
         return "BaseLogin";
     }
@@ -197,6 +209,7 @@ public class HFBaseLoginRequest extends HFBaseRequest<HFBaseLoginResponse> {
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
+                put("appId", getAppId());
                 put("nickname", getNickname());
                 put("gender", getGender());
                 put("birthday", getBirthday());
@@ -206,6 +219,7 @@ public class HFBaseLoginRequest extends HFBaseRequest<HFBaseLoginResponse> {
                 put("isOrganization", isOrganization());
                 put("favoriteSinger", getFavoriteSinger());
                 put("favoriteGenre", getFavoriteGenre());
+                put("timestamp", getTimestamp());
                 put("country", getCountry());
                 put("location", getLocation());
                 put("province", getProvince());
