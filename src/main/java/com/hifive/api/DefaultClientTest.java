@@ -49,7 +49,6 @@ public class DefaultClientTest {
 //        for (int i = 0;i< 20 ;i++) {
 //            hifiveOpenMemberSheetMusicAddRequestRequest(client);
 //        }
-        hifiveAuthorizeMusic(client);
         //hifiveOpenMemberSheetMusicAddRequestRequest(client);
        // HifiveBaseLoginRequest(client);
         //hifiveBaseFavoriteRequestTest(client);
@@ -1071,18 +1070,6 @@ public class DefaultClientTest {
         request.setAccessToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiJlM2RlOGRlMzY2ODM0YmYwODYiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MjUzODIwMjgsImlhdCI6MTYyMDg4OTIyOH0.sl23Uu0qKjoftlFR2pY-Ei0UfINQoZ8XG6DGfO-hKrY");
         request.setTimestamp(System.currentTimeMillis());
         HFAddMemberSheetMusicResponse response = client.execute(request);
-        System.out.println(JSON.toJSON(response));
-    }
-
-
-    private static void hifiveAuthorizeMusic(HFClient client) throws ApiException {
-        HFAuthorizeMusicRequest request = new HFAuthorizeMusicRequest();
-        request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("hifivetest-wangjiamin");
-        request.setPage(1);
-        request.setPageSize(20);
-        request.setTimestamp(System.currentTimeMillis());
-        HFAuthorizeMusicResponse response = client.execute(request);
         System.out.println(JSON.toJSON(response));
     }
 
