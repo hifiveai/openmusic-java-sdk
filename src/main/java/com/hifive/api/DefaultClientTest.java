@@ -35,8 +35,8 @@ public class DefaultClientTest {
 
         String url = "https://hifive-gateway-pre.hifiveai.com";
 //        String url = "http://127.0.0.1:8011";
-        String appkey = "300a44d050c942eebeae8765a878b0ee";
-        String secret = "0e31fe11b31247fca8";
+        String appkey = "7463cad33bd44afa81c663d9608669aa";
+        String secret = "ea38ce173dbf43148b";
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
 
@@ -49,7 +49,7 @@ public class DefaultClientTest {
 //        for (int i = 0;i< 20 ;i++) {
 //            hifiveOpenMemberSheetMusicAddRequestRequest(client);
 //        }
-        hifiveAuthorizeMusic(client);
+//        hifiveAuthorizeMusic(client);
         //hifiveOpenMemberSheetMusicAddRequestRequest(client);
        // HifiveBaseLoginRequest(client);
         //hifiveBaseFavoriteRequestTest(client);
@@ -136,7 +136,7 @@ public class DefaultClientTest {
 //
 //
 //        hifiveChannelRequestTest(client);
-//        hifiveChannelSheetRequestTest(client);
+        hifiveChannelSheetRequestTest(client);
 //        hifiveHQListenSliceRequestTest(client);
 //
 //        hifiveHQListenRequestTest(client);
