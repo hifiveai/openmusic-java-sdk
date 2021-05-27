@@ -47,6 +47,7 @@ public class DefaultClientTest {
 //        for (int i = 0;i< 20 ;i++) {
 //            hifiveOpenMemberSheetMusicAddRequestRequest(client);
 //        }
+        HFSearchHistoryRequest(client);
         //hifiveOpenMemberSheetMusicAddRequestRequest(client);
         // HifiveBaseLoginRequest(client);
         //hifiveBaseFavoriteRequestTest(client);
@@ -1134,6 +1135,19 @@ public class DefaultClientTest {
     }
 
 
+
+    private static void HFSearchHistoryRequest(HFClient client) throws ApiException {
+        HFSearchHistoryRequest request = new HFSearchHistoryRequest();
+        request.setMethod(HFRequest.METHOD_GET);
+        request.setClientId("meiyang");
+        request.setVersion("V4.1.2");
+        request.setPage(1);
+        request.setPageSize(20);
+        request.setTimestamp(System.currentTimeMillis());
+        request.setAccessToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiIyMTg0ZDJhYTY4NzA0ZmI1YTkiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MjY1ODczMTQsImlhdCI6MTYyMjA5NDUxNH0.r_PeM-EMiUYV-SXr7IT2gZR9VHgPZPnI2T2Fc3N4yfw");
+        HFSearchHistoryResponse response = client.execute(request);
+        System.out.println(JSON.toJSON(response));
+    }
 
 
 }

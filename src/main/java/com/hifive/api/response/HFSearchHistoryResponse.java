@@ -1,6 +1,8 @@
 package com.hifive.api.response;
 
 import com.hifive.api.HFResponse;
+import com.hifive.api.domain.common.HFMusicInfoDetail;
+import com.hifive.api.domain.common.HifiveLiveApiPage;
 import com.hifive.api.domain.common.HifivePage;
 import com.hifive.api.domain.common.SearchRecord;
 import com.hifive.api.internal.mapping.ApiField;
@@ -14,13 +16,14 @@ import com.hifive.api.internal.mapping.ApiField;
 public class HFSearchHistoryResponse extends HFResponse {
 
     @ApiField("data")
-    private HifivePage<SearchRecord> hifivePage;
+    private HifiveLiveApiPage<SearchRecord> hifiveLiveApiPage;
 
-    public HifivePage<SearchRecord> getHifivePage() {
-        return hifivePage;
+
+    public HifiveLiveApiPage<SearchRecord> getHifiveLiveApiPage() {
+        return hifiveLiveApiPage;
     }
 
-    public void setHifivePage(HifivePage<SearchRecord> hifivePage) {
-        this.hifivePage = hifivePage;
+    public void setHifiveLiveApiPage(HifiveLiveApiPage<SearchRecord> hifiveLiveApiPage) {
+        this.hifiveLiveApiPage = hifiveLiveApiPage;
     }
 }
