@@ -33,8 +33,8 @@ public class DefaultClientTest {
 
         String url = "https://gateway.open.hifiveai.com";
 //        String url = "http://127.0.0.1:8011";
-        String appkey = "300a44d050c942eebeae8765a878b0ee";
-        String secret = "0e31fe11b31247fca8";
+        String appkey = "dbc7c2b5d0284ae69a5ff4842985cfab";
+        String secret = "281c20240e5c47a59a";
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
 
@@ -49,7 +49,7 @@ public class DefaultClientTest {
 //        hFClearMemberSheetMusicRequest(client);
 //        hFDeleteMemberSheetRequest(client);
 //        hifiveSearchMusicRequestTest(client);
-        hFSearchHistoryRequest(client);
+//        hFSearchHistoryRequest(client);
 
 //        hifiveBaseHotRequestTest(client);
 //        for (int i = 0;i< 20 ;i++) {
@@ -79,18 +79,18 @@ public class DefaultClientTest {
             //long time2 = System.currentTimeMillis();
             Thread.sleep(1000);
         }*/
-      /*  System.out.println("------------------------------------hifiveHQListenRequestTest");
+       System.out.println("------------------------------------hifiveHQListenRequestTest");
         for (int i = 0;i<10; i++) {
 
-          //  long time = System.currentTimeMillis();
+            long time = System.currentTimeMillis();
             hifiveHQListenRequestTest(client);
-            //long time2 = System.currentTimeMillis();
-            //System.out.println("hifiveHQListenRequestTest-----------------" + (time2 - time));
+            long time2 = System.currentTimeMillis();
+            System.out.println("hifiveHQListenRequestTest-----------------" + (time2 - time));
             Thread.sleep(1000);
         }
         System.out.println("------------------------------------hifiveHQListenRequestTest");
 
-
+/*
         System.out.println("------------------------------------hifiveTrafficGroupRequestTest");
         for (int i = 0;i<10; i++) {
          //   long time = System.currentTimeMillis();
@@ -412,7 +412,7 @@ public class DefaultClientTest {
         HFTrafficHQListenRequest request = new HFTrafficHQListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("InstaOpen202012010000360001");
-        request.setMusicId("2F087F2A41");
+        request.setMusicId("CDE42CA2A076");
         /*request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
         try {
