@@ -47,7 +47,7 @@ public class DefaultClientTest {
 //        for (int i = 0;i< 20 ;i++) {
 //            hifiveOpenMemberSheetMusicAddRequestRequest(client);
 //        }
-        HFSearchHistoryRequest(client);
+        hifiveOpenMemberSheetRequestRequest(client);
         //hifiveOpenMemberSheetMusicAddRequestRequest(client);
         // HifiveBaseLoginRequest(client);
         //hifiveBaseFavoriteRequestTest(client);
