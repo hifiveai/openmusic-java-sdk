@@ -7,8 +7,6 @@ import java.io.Serializable;
  *
  * @author meiyang
  * @version 1.0
- * @review meiyang
- * @date 2020-10-23 16:41:37
  **/
 public class SearchRecord implements Serializable {
 

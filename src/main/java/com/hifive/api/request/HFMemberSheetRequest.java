@@ -9,8 +9,6 @@ import java.util.Map;
 /**
  * @author meiyang
  * @version 1.0
- * @review meiyang
- * @date 2021-05-10 20:13:43
  **/
 public class HFMemberSheetRequest extends HFPageRequest<HFMemberSheetResponse> {
 

@@ -7,8 +7,6 @@ import com.hifive.api.internal.mapping.ApiField;
 /**
  * @author meiyang
  * @version 1.0
- * @review meiyang
- * @date 2021-05-10 20:16:42
  **/
 public class HFBaseLoginResponse extends HFResponse {
 

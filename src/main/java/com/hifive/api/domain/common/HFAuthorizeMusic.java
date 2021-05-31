@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * 授权曲库歌曲查询接口
  * @author shen_xu
- * @ClassName AuthorizeMusicDTO
  */
 
 @Data

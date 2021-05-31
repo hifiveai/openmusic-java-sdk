@@ -9,8 +9,6 @@ import java.util.Map;
 /**
  * @author meiyang
  * @version 1.0
- * @review meiyang
- * @date 2021-05-10 20:15:52
  **/
 public class HFClearMemberSheetMusicRequest extends HFBaseRequest<HFClearMemberSheetMusicResponse> {
     /**

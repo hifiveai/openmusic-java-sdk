@@ -9,8 +9,6 @@ import java.io.Serializable;
  *
  * @author meiyang
  * @version 1.0
- * @review meiyang
- * @date 2020-10-23 17:01:28
  **/
 public class MemberSheet implements Serializable {
 
