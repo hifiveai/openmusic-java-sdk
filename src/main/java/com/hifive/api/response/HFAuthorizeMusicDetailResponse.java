@@ -1,9 +1,13 @@
 package com.hifive.api.response;
 
 import com.hifive.api.HFResponse;
+import com.hifive.api.domain.common.HFAuthorizeMusicNoFileDetail;
 import com.hifive.api.domain.common.HFMusicInfoDetail;
 import com.hifive.api.domain.common.HifivePage;
 import com.hifive.api.internal.mapping.ApiField;
+import com.hifive.api.internal.mapping.ApiListField;
+
+import java.util.List;
 
 /**
  * 分页。
@@ -13,16 +17,14 @@ import com.hifive.api.internal.mapping.ApiField;
  */
 public class HFAuthorizeMusicDetailResponse extends HFResponse {
 
-    @ApiField("data")
-    HifivePage<HFMusicInfoDetail> hifivePage;
+    @ApiListField("data")
+    List<HFAuthorizeMusicNoFileDetail> authorizeMusicNoFileDetails;
 
-    public HifivePage<HFMusicInfoDetail> getHifivePage() {
-        return hifivePage;
+    public List<HFAuthorizeMusicNoFileDetail> getAuthorizeMusicNoFileDetails() {
+        return authorizeMusicNoFileDetails;
     }
 
-    public void setHifivePage(HifivePage<HFMusicInfoDetail> hifivePage) {
-        this.hifivePage = hifivePage;
+    public void setAuthorizeMusicNoFileDetails(List<HFAuthorizeMusicNoFileDetail> authorizeMusicNoFileDetails) {
+        this.authorizeMusicNoFileDetails = authorizeMusicNoFileDetails;
     }
-
-
 }
