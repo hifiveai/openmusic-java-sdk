@@ -6,6 +6,7 @@ import com.hifive.api.request.*;
 import com.hifive.api.response.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DefaultClientTest {
@@ -13,11 +14,11 @@ public class DefaultClientTest {
 
     public static void main(String[] args) throws InterruptedException, ApiException {
 
-        String url = "https://hifive-gateway-test.hifiveai.com";
-        String appkey = "ee45ca73bf1746428b2a942e017056df";
-        String secret = "cd231e0c8d314074b2";
-        System.out.println("------------------------------------hifiveHQListenRequestTest");
-        HFClient client = new DefaultHFClient(url, appkey, secret);
+//        String url = "https://hifive-gateway-test.hifiveai.com";
+//        String appkey = "ee45ca73bf1746428b2a942e017056df";
+//        String secret = "cd231e0c8d314074b2";
+//        System.out.println("------------------------------------hifiveHQListenRequestTest");
+//        HFClient client = new DefaultHFClient(url, appkey, secret);
 
 //        String url = "https://hifive-openapi-qa.hifiveai.com";
 //        String appkey = "6bea19aa99a14d6d866dbb8c46c32819";
@@ -31,12 +32,15 @@ public class DefaultClientTest {
 //        System.out.println("------------------------------------hifiveHQListenRequestTest");
 //        HFClient client = new DefaultHFClient(url, appkey, secret);
 
-//        String url = "https://gateway.open.hifiveai.com";
+//        String url = "https://hifive-gateway-pre.hifiveai.com";
+        String url = "https://gateway.open.hifiveai.com";
 //        String url = "http://127.0.0.1:8011";
-//        String appkey = "300a44d050c942eebeae8765a878b0ee";
-//        String secret = "0e31fe11b31247fca8";
-//        System.out.println("------------------------------------hifiveHQListenRequestTest");
-//        HFClient client = new DefaultHFClient(url, appkey, secret);
+        String appkey = "300a44d050c942eebeae8765a878b0ee";
+        String secret = "0e31fe11b31247fca8";
+        System.out.println("------------------------------------hifiveHQListenRequestTest");
+        HFClient client = new DefaultHFClient(url, appkey, secret);
+
+        hifiveHFAuthorizeMusicDetailRequest(client);
 
         //OpenApi C端
 //        hifiveOpenMemberLoginRequest(client);
@@ -200,6 +204,24 @@ public class DefaultClientTest {
 //            e.printStackTrace();
 //        }
 //    }
+
+    private static void hifiveHFAuthorizeMusicDetailRequest(HFClient client){
+        HFAuthorizeMusicDetailRequest request = new HFAuthorizeMusicDetailRequest();
+        request.setMethod(HFRequest.METHOD_POST);
+        request.setVersion("V4.1.1");
+        List<String> musicId = new ArrayList<>();
+        musicId.add("1D653D0C377");
+        musicId.add("C3B9C96F668F");
+        request.setMusicIds(String.join(",",musicId));
+        request.setClientId("1223234343");
+        try {
+            HFAuthorizeMusicDetailResponse response =  client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private static void hifiveBaseReportRequest(HFClient client) {
         HFBaseReportRequest request = new HFBaseReportRequest();

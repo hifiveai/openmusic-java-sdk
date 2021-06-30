@@ -13,7 +13,7 @@ public class HFAuthorizeMusicDetailRequest extends HFBaseRequest<HFAuthorizeMusi
     /**
      * 音乐id
      **/
-    private List<String> musicIds;
+    private String musicIds;
 
     @Override
     public String getApiMethodName() {
@@ -29,11 +29,11 @@ public class HFAuthorizeMusicDetailRequest extends HFBaseRequest<HFAuthorizeMusi
         return txtParams;
     }
 
-    public List<String> getMusicIds() {
+    public String getMusicIds() {
         return musicIds;
     }
 
-    public void setMusicIds(List<String> musicIds) {
+    public void setMusicIds(String musicIds) {
         this.musicIds = musicIds;
     }
 

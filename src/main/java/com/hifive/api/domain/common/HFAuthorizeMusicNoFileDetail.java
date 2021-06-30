@@ -63,6 +63,13 @@ public class HFAuthorizeMusicNoFileDetail extends HFBaseMusic {
     private String intro;
 
     /**
+     * 价格
+     */
+    @ApiField("price")
+    private Integer price;
+
+
+    /**
      * 版本
      */
     @ApiListField("version")
@@ -244,6 +251,14 @@ public class HFAuthorizeMusicNoFileDetail extends HFBaseMusic {
 
     public void setMaker(List<HifiveMusicPerson> maker) {
         this.maker = maker;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 }
 
