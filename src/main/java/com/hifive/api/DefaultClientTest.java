@@ -13,11 +13,11 @@ public class DefaultClientTest {
 
     public static void main(String[] args) throws InterruptedException, ApiException {
 
-//        String url = "https://hifive-gateway-test.hifiveai.com";
-//        String appkey = "ee45ca73bf1746428b2a942e017056df";
-//        String secret = "cd231e0c8d314074b2";
-//        System.out.println("------------------------------------hifiveHQListenRequestTest");
-//        HFClient client = new DefaultHFClient(url, appkey, secret);
+        String url = "https://hifive-gateway-test.hifiveai.com";
+        String appkey = "ee45ca73bf1746428b2a942e017056df";
+        String secret = "cd231e0c8d314074b2";
+        System.out.println("------------------------------------hifiveHQListenRequestTest");
+        HFClient client = new DefaultHFClient(url, appkey, secret);
 
 //        String url = "https://hifive-openapi-qa.hifiveai.com";
 //        String appkey = "6bea19aa99a14d6d866dbb8c46c32819";
@@ -31,12 +31,12 @@ public class DefaultClientTest {
 //        System.out.println("------------------------------------hifiveHQListenRequestTest");
 //        HFClient client = new DefaultHFClient(url, appkey, secret);
 
-        String url = "https://gateway.open.hifiveai.com";
+//        String url = "https://gateway.open.hifiveai.com";
 //        String url = "http://127.0.0.1:8011";
-        String appkey = "300a44d050c942eebeae8765a878b0ee";
-        String secret = "0e31fe11b31247fca8";
-        System.out.println("------------------------------------hifiveHQListenRequestTest");
-        HFClient client = new DefaultHFClient(url, appkey, secret);
+//        String appkey = "300a44d050c942eebeae8765a878b0ee";
+//        String secret = "0e31fe11b31247fca8";
+//        System.out.println("------------------------------------hifiveHQListenRequestTest");
+//        HFClient client = new DefaultHFClient(url, appkey, secret);
 
         //OpenApi C端
 //        hifiveOpenMemberLoginRequest(client);
