@@ -35,8 +35,8 @@ public class DefaultClientTest {
 //        String url = "https://hifive-gateway-pre.hifiveai.com";
         String url = "https://gateway.open.hifiveai.com";
 //        String url = "http://127.0.0.1:8011";
-        String appkey = "300a44d050c942eebeae8765a878b0ee";
-        String secret = "0e31fe11b31247fca8";
+        String appkey = "3faeec81030444e98acf6af9ba32752a";
+        String secret = "59b1aff189b3474398";
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
 
@@ -209,8 +209,8 @@ public class DefaultClientTest {
         HFAuthorizeMusicDetailRequest request = new HFAuthorizeMusicDetailRequest();
         request.setMethod(HFRequest.METHOD_POST);
         List<String> musicId = new ArrayList<>();
-        musicId.add("1D653D0C377");
-        musicId.add("C3B9C96F668F");
+        musicId.add("B7B810A3A473");
+        musicId.add("B7B810B0FD5C");
         request.setMusicIds(String.join(",",musicId));
         request.setClientId("1223234343");
         try {
