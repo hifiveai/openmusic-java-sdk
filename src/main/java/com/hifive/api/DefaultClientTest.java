@@ -208,7 +208,6 @@ public class DefaultClientTest {
     private static void hifiveHFAuthorizeMusicDetailRequest(HFClient client){
         HFAuthorizeMusicDetailRequest request = new HFAuthorizeMusicDetailRequest();
         request.setMethod(HFRequest.METHOD_POST);
-        request.setVersion("V4.1.1");
         List<String> musicId = new ArrayList<>();
         musicId.add("1D653D0C377");
         musicId.add("C3B9C96F668F");
