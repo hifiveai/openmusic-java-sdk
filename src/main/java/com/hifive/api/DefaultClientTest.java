@@ -40,7 +40,7 @@ public class DefaultClientTest {
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
 
-        hifiveHFAuthorizeMusicDetailRequest(client);
+//        hifiveHFAuthorizeMusicDetailRequest(client);
 
         //OpenApi C端
 //        hifiveOpenMemberLoginRequest(client);
@@ -52,7 +52,11 @@ public class DefaultClientTest {
 //        hFCreateMemberSheetRequest(client);
 //        hFClearSearchHistoryRequest(client);
 //        hFDeleteMemberSheetRequest(client);
-//        hifiveSearchMusicRequestTest(client);
+
+        for(int i= 0;i < 200;i++){
+            hifiveSearchMusicRequestTest(client);
+        }
+
 //        hFSearchHistoryRequest(client);
 
 //        hifiveBaseHotRequestTest(client);
@@ -321,8 +325,8 @@ public class DefaultClientTest {
 //        request.setTagIds("1000");
         request.setSearchFiled(SearchFiledEnum.MUSIC.getValue());
 //        request.setSearchFiled("aa");
-//        request.setSearchSmart(SearchSmartEnum.NO.getValue());
-        request.setKeyword("情");
+        request.setSearchSmart(SearchSmartEnum.NO.getValue());
+//        request.setKeyword("mellow");
 //        request.setNonce("fee23fwy9cef16fsw6387wg7m61uw676");
         request.setClientId("test_hifive_123");
         try {
