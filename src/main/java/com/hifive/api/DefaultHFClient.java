@@ -219,6 +219,7 @@ public class DefaultHFClient implements HFClient {
             throw new ApiException(e);
         }
         long time2 = System.currentTimeMillis();
+        System.out.println("请求花费时间:"+(time2-time));
         result.put("rsp", rsp);
         result.put("textParams", appParams);
         result.put("url", urlSb.toString());
