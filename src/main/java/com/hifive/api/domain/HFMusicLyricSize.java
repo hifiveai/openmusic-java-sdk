@@ -2,6 +2,9 @@ package com.hifive.api.domain;
 
 import com.hifive.api.domain.common.base.HFBaseMusicSize;
 import com.hifive.api.internal.mapping.ApiField;
+import com.hifive.api.internal.mapping.ApiListField;
+
+import java.util.List;
 
 /**
  * <p>
@@ -21,6 +24,10 @@ public class HFMusicLyricSize extends HFBaseMusicSize {
 
     @ApiField("staticLyricUrl")
     private String staticLyricUrl;
+
+    @ApiListField("subVersions")
+    private List<SubVersion> subVersions;
+
 
     public String getMusicId() {
         return musicId;
@@ -44,5 +51,13 @@ public class HFMusicLyricSize extends HFBaseMusicSize {
 
     public void setStaticLyricUrl(String staticLyricUrl) {
         this.staticLyricUrl = staticLyricUrl;
+    }
+
+    public List<SubVersion> getSubVersions() {
+        return subVersions;
+    }
+
+    public void setSubVersions(List<SubVersion> subVersions) {
+        this.subVersions = subVersions;
     }
 }

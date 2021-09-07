@@ -1,10 +1,13 @@
 package com.hifive.api;
 
 import com.alibaba.fastjson.JSON;
+import com.hifive.api.domain.common.HFAuthorizeMusicDetail;
+import com.hifive.api.domain.common.HifivePage;
 import com.hifive.api.domain.constants.*;
 import com.hifive.api.request.*;
 import com.hifive.api.response.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,8 +18,9 @@ public class DefaultClientTest {
     public static void main(String[] args) throws InterruptedException, ApiException {
 
 //        String url = "https://hifive-gateway-test.hifiveai.com";
-//        String appkey = "ee45ca73bf1746428b2a942e017056df";
-//        String secret = "cd231e0c8d314074b2";
+//        String url = "http://127.0.0.1:8011";
+//        String appkey = "999f66435afc4021aececd41814fd587";
+//        String secret = "779365cd5f2b4286ae";
 //        System.out.println("------------------------------------hifiveHQListenRequestTest");
 //        HFClient client = new DefaultHFClient(url, appkey, secret);
 
@@ -32,15 +36,26 @@ public class DefaultClientTest {
 //        System.out.println("------------------------------------hifiveHQListenRequestTest");
 //        HFClient client = new DefaultHFClient(url, appkey, secret);
 
-//        String url = "https://hifive-gateway-pre.hifiveai.com";
-        String url = "https://gateway.open.hifiveai.com";
+//          String url = "https://hifive-gateway-pre.hifiveai.com";
+//        String url = "https://gateway.open.hifiveai.com";
+////        String url = "http://127.0.0.1:8011";
+//        String appkey = "99e617f2476c49e5b00642ebd6869537";
+//        String secret = "3df871d008bf4eadb4";
+//        System.out.println("------------------------------------hifiveHQListenRequestTest");
+//        HFClient client = new DefaultHFClient(url, appkey, secret);
+
+        String url = "https://hifive-gateway-pre.hifiveai.com";
+//        String url = "https://gateway.open.hifiveai.com";
 //        String url = "http://127.0.0.1:8011";
-        String appkey = "3faeec81030444e98acf6af9ba32752a";
-        String secret = "59b1aff189b3474398";
+//        String appkey = "3faeec81030444e98acf6af9ba32752a";
+//        String secret = "59b1aff189b3474398";
+        String appkey = "574deacc80db4c5088d1922cdb4677e1";
+        String secret = "b2a130a03553471dbf";
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
 
-        hifiveHFAuthorizeMusicDetailRequest(client);
+
+//        hifiveHFAuthorizeMusicDetailRequest(client);
 
         //OpenApi C端
 //        hifiveOpenMemberLoginRequest(client);
@@ -55,11 +70,17 @@ public class DefaultClientTest {
 //        hifiveSearchMusicRequestTest(client);
 //        hFSearchHistoryRequest(client);
 
+//        Long start = System.currentTimeMillis();
 //        hifiveBaseHotRequestTest(client);
+//        Long end = System.currentTimeMillis();
+//        System.out.println(end - start);
+
 //        for (int i = 0;i< 20 ;i++) {
 //            hifiveOpenMemberSheetMusicAddRequestRequest(client);
 //        }
-        // HifiveBaseLoginRequest(client);
+//        hifiveAuthorizeMusic(client);
+        //hifiveOpenMemberSheetMusicAddRequestRequest(client);
+//         HifiveBaseLoginRequest(client);
         //hifiveBaseFavoriteRequestTest(client);
         //OpenApi C端
 
@@ -126,28 +147,31 @@ public class DefaultClientTest {
         System.out.println("------------------------------------hifiveTrafficSheetMusicRequestTest");
 */
         //hifiveTagSheetRequestTest(client);
-        //HifiveBaseLoginRequest(client);
+//        HifiveBaseLoginRequest(client);
         //  HifiveBaseLoginRequest(client);
 //        hifiveSearchMusicRequestTest(client);
 //        hifiveBaseFavoriteRequestTest(client);
 //        hifiveBaseVisualRequestTest(client);
+//        hifiveBaseWeatherRequestTest(client);
 //        hifiveBaseWeatherRequestTest(client);
 //
 //        hifiveMusicConfigRequestTest(client);
 //        hifiveSearchMusicRequestTest(client);
 //        hifiveSheetTagRequestTest(client);
 //        hifiveTagSheetRequestTest(client);
-//        hifiveSheetMusicRequestTest(client);
+
 //        HifiveOrderAuthorizationRequestTest(client);
 //
 //
 //        hifiveChannelRequestTest(client);
 //        hifiveChannelSheetRequestTest(client);
+//        hifiveSheetMusicRequestTest(client);
+
 //        hifiveHQListenSliceRequestTest(client);
 //
 //        hifiveHQListenRequestTest(client);
 //        hifiveUGCListenRequestTest(client);
-//        hifiveKListenRequestTest(client);
+        hifiveKListenRequestTest(client);
 //
 //        hifiveOrderMusicRequestTest(client);
 //        hifiveOrderDetailRequestTest(client);
@@ -209,8 +233,8 @@ public class DefaultClientTest {
         HFAuthorizeMusicDetailRequest request = new HFAuthorizeMusicDetailRequest();
         request.setMethod(HFRequest.METHOD_POST);
         List<String> musicId = new ArrayList<>();
-        musicId.add("B7B810A3A473");
-        musicId.add("B7B810B0FD5C");
+        musicId.add("1D653D0C377");
+        musicId.add("C3B9C96F668F");
         request.setMusicIds(String.join(",",musicId));
         request.setClientId("1223234343");
         try {
@@ -241,10 +265,11 @@ public class DefaultClientTest {
         HFBaseHotRequest request = new HFBaseHotRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setPage(1);
-        request.setPageSize(20);
-        request.setStartTime(1594639058L);
-        request.setDuration(183);
-        request.setClientId("1223234343");
+        request.setPageSize(10);
+        request.setStartTime(System.currentTimeMillis() / 1000);
+        request.setDuration(180);
+        request.setClientId("1223234343b");
+        request.setVersion("V4.1.2");
         request.setToken("a0ef39d567c08eadb3da1f1b60728e67");
         try {
             HFBaseHotResponse response = client.execute(request);
@@ -319,10 +344,10 @@ public class DefaultClientTest {
         request.setPageSize(10);
         request.setVersion("V4.1.2");
 //        request.setTagIds("1000");
-        request.setSearchFiled(SearchFiledEnum.MUSIC.getValue());
+//        request.setSearchFiled(SearchFiledEnum.MUSIC.getValue());
 //        request.setSearchFiled("aa");
-//        request.setSearchSmart(SearchSmartEnum.NO.getValue());
-        request.setKeyword("情");
+        request.setSearchSmart(SearchSmartEnum.YES.getValue());
+        request.setKeyword("古典");
 //        request.setNonce("fee23fwy9cef16fsw6387wg7m61uw676");
         request.setClientId("test_hifive_123");
         try {
@@ -364,7 +389,7 @@ public class DefaultClientTest {
         HFSheetMusicRequest request = new HFSheetMusicRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("1223234343");
-        request.setSheetId(1564L);
+        request.setSheetId(3818L);
         request.setLanguage(1);
         request.setPage(1);
         request.setPageSize(5);
@@ -382,12 +407,13 @@ public class DefaultClientTest {
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("1223234343");
 
-        request.setCompanyName("嗨翻屋d1g");
+        request.setCompanyName("meiyang4");
         request.setArea(AreaEnum.GLOBLE.getValue());
-        request.setBrand("HIFIVE音乐开放平台");
+        request.setBrand("meiyang4");
         request.setPeriod(PeriodEnum.THREE_YEAR.getValue());
-        request.setProjectName("小嗨nbdb");
-        request.setOrderIds("hifivecd79222bdf214390813221a7e0c0e42d");
+        request.setProjectName("meiyang4");
+        request.setOrderIds("101");
+        request.setVersion("V4.1.1");
         try {
             HFOrderAuthorizationResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -414,11 +440,12 @@ public class DefaultClientTest {
         HFChannelSheetRequest request = new HFChannelSheetRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("1223234343");
-//        request.setGroupId("yIhufTMANVCBBB");
+        request.setGroupId("6ShwOxc02Z4");
         request.setLanguage(LangageEnum.CN.getValue());
         request.setRecoNum(10);
         request.setPage(1);
         request.setPageSize(10);
+        request.setVersion("V4.1.2");
 
         try {
             HFChannelSheetResponse response = client.execute(request);
@@ -433,7 +460,8 @@ public class DefaultClientTest {
         HFTrafficHQListenRequest request = new HFTrafficHQListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("InstaOpen202012010000360001");
-        request.setMusicId("CDE42CA2A076");
+        request.setMusicId("4B40FCB84");
+        request.setVersion("V4.1.2");
         /*request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
         try {
@@ -448,7 +476,8 @@ public class DefaultClientTest {
         HFUGCHQListenRequest request = new HFUGCHQListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("InstaOpen202012010000360001");
-        request.setMusicId("4B40CC524");
+        request.setMusicId("4B40A048E");
+        request.setVersion("V4.0.1");
         /*request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
         try {
@@ -463,9 +492,12 @@ public class DefaultClientTest {
         HFKHQListenRequest request = new HFKHQListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("InstaOpen202012010000360001");
-        request.setMusicId("2F084494DE");
-        /*request.setAudioFormat(AudioFormatEnum.MP3_128.format);
-        request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
+        request.setMusicId("2F0864DEC7");
+//        request.setMusicId("125F34E4045A");
+//        request.setVersion("V4.1.2");
+        request.setVersion("V4.1.2");
+        request.setAudioFormat(AudioFormatEnum.AAC_320.format);
+        request.setAudioRate(AudioFormatEnum.AAC_320.rate);
         try {
             HFKHQListenResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -529,7 +561,7 @@ public class DefaultClientTest {
         HFTrialRequest request = new HFTrialRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("HOomxI+g0HvxGKofmUVsnw==");
-        request.setMusicId("7867AEFA");
+        request.setMusicId("2F0863F818");
         try {
             HFTrialResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -557,7 +589,7 @@ public class DefaultClientTest {
         HFUGCTrialRequest request = new HFUGCTrialRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("HOomxI+g0HvxGKofmUVsnw==");
-        request.setMusicId("CFE6475822DF");
+        request.setMusicId("1D652176A6E");
         try {
             HFUGCTrialResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -618,12 +650,13 @@ public class DefaultClientTest {
         HFOrderMusicRequest request = new HFOrderMusicRequest();
         request.setMethod(HFRequest.METHOD_POST);
         request.setClientId("1223234343");
-        request.setOrderId("sfsdfs");
+        request.setOrderId("11111112312327");
         request.setSubject("nYyple");
-        request.setClientId("DXQOY");
-        request.setWorkId("uEC00xeWbExGNilHpSN7MoM3AalWqwUp");
-        request.setMusic("[{\"versionId\":\"2F084494DE\",\"price\":20,\"num\":1}]");
-        request.setTotalFee(1556);
+        request.setClientId("meiyang");
+        request.setWorkId("uEC00xeWbExGNilHpSN7MoM3AalWqwUps");
+        request.setVersion("V4.1.2");
+        request.setMusic("[{\"versionId\":\"2F0881B569\",\"price\":20,\"num\":1}]");
+        request.setTotalFee(10);
         request.setDeadline(50);
         request.setLanguage(LangageEnum.CN.getValue());
         request.setAudioFormat(AudioFormatEnum.AAC_320.format);
@@ -1027,7 +1060,7 @@ public class DefaultClientTest {
         request.setMethod(HFRequest.METHOD_POST);
         request.setVersion("V4.1.2");
         request.setCountry("乐山");
-        request.setAppId("300a44d050c942eebeae8765a878b0ee");
+//        request.setAppId("300a44d050c942eebeae8765a878b0ee");
         request.setEducation(EducationEnum.MIDDLE_SCHOOLE.ordinal());
         request.setGender(GenderEnum.MAN.ordinal());
         request.setNickname("谎言");
@@ -1051,7 +1084,7 @@ public class DefaultClientTest {
         request.setTimestamp(System.currentTimeMillis());
         request.setPage(1);
         request.setPageSize(10);
-        request.setAccessToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiIyMTg0ZDJhYTY4NzA0ZmI1YTkiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MjY5MzY1NTEsImlhdCI6MTYyMjQ0Mzc1MX0.h10wt28v9E4Fsh3dvtet3GeC9lIjYbEr2OpRDXw-bqg");
+        request.setAccessToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiIyMTg0ZDJhYTY4NzA0ZmI1YTkiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MzAwNjEwMTcsImlhdCI6MTYyNTU2ODIxN30.1DY9C20OseJHDgUquSBN_6raYdhK7mIwnZKM5PtY4nw");
         request.setTimestamp(System.currentTimeMillis());
         HFMemberSheetResponse response = client.execute(request);
         System.out.println(JSON.toJSON(response));
@@ -1064,11 +1097,11 @@ public class DefaultClientTest {
         request.setClientId("test_hifive_123");
         request.setVersion("V4.1.2");
 //        request.setMusicId("B7B810A5B4B7");
-        request.setSheetId(26781L);
+        request.setSheetId(27988L);
         request.setTimestamp(System.currentTimeMillis());
         request.setPage(1);
         request.setPageSize(10);
-        request.setAccessToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiIyMTg0ZDJhYTY4NzA0ZmI1YTkiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MjY5MzY1NTEsImlhdCI6MTYyMjQ0Mzc1MX0.h10wt28v9E4Fsh3dvtet3GeC9lIjYbEr2OpRDXw-bqg");
+        request.setAccessToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiIyMTg0ZDJhYTY4NzA0ZmI1YTkiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MzAwNjEwMTcsImlhdCI6MTYyNTU2ODIxN30.1DY9C20OseJHDgUquSBN_6raYdhK7mIwnZKM5PtY4nw");
         request.setTimestamp(System.currentTimeMillis());
         HFMemberSheetMusicResponse response = client.execute(request);
         System.out.println(JSON.toJSON(response));
@@ -1088,6 +1121,7 @@ public class DefaultClientTest {
         HFAddMemberSheetMusicResponse response = client.execute(request);
         System.out.println(JSON.toJSON(response));
     }
+
 
     private static void hFOpenMemberSheetMusicDeleteRequest(HFClient client) throws ApiException {
         HFRemoveMemberSheetMusicRequest request = new HFRemoveMemberSheetMusicRequest();
