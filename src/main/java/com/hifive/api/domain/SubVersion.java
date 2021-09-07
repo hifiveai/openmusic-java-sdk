@@ -6,8 +6,6 @@ import java.io.Serializable;
 /**
  * @author meiyang
  * @version 1.0
- * @review meiyang
- * @date 2021-08-31 16:27:37
  **/
 
 public class SubVersion implements Serializable {
